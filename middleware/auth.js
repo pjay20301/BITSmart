@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const User = require('../model/user.js')
+const User = require('../models/user.js')
 
 const jwtsecret = process.env.JWTSECRET
 

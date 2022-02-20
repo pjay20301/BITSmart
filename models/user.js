@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const jwt = require('jsonwebtoken')
-const bcyrpt = reqquire('bcrypt')
+const bcyrpt = require('bcrypt')
 
 const jwtsecret = process.env.JWTSECRET
 
@@ -24,7 +24,7 @@ var user = new mongoose.Schema({
     ],
     role: {
         type: String,
-        default: false,
+        required: true,
     },
 })
 

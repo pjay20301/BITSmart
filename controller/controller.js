@@ -32,6 +32,7 @@ exports.signUp = async (req, res) => {
         res.status(400).json({ message: 'No field can be empty!' })
         return
     }
+    console.log("new")
     try {
         const newUser = new User({
         email: req.body.email,
@@ -46,7 +47,7 @@ exports.signUp = async (req, res) => {
         }
         return res.status(201).send({ user: publicUser, token })
     } catch (error) {
-        return res.status(200).send({ error: 'Email ID taken' })
+        return res.status(200).send({ error: 'Email1 ID taken' })
     }
 }
 
