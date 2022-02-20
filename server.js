@@ -20,6 +20,8 @@ app.get('/', (req, res) => {
   res.send('Server running')
 })
 
+app.use('/', require('./routes/router'))
+
 app.listen(port, () => {
   console.log(`server is running on port https://localhost:${port}`)
 })
