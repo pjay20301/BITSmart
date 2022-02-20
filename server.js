@@ -4,7 +4,11 @@ const dotenv = require('dotenv')
 const app = express()
 
 dotenv.config({ path: 'config.env' })
+
 const port = process.env.PORT
+const connectDB = require('./database/connection')
+
+connectDB()
 
 app.use(
   express.urlencoded({
