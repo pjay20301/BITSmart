@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt')
 const User = require('../models/user')
 
 exports.signIn = async (req, res) => {
+
     if (req.body.email == '' || req.body.password == '') {
     res.status(400).json({ message: 'No field can be empty!' })
     return
@@ -12,6 +13,7 @@ exports.signIn = async (req, res) => {
         req.body.email,
         req.body.password
     )
+
     if (user instanceof Error) {
         throw user
     }
@@ -21,6 +23,7 @@ exports.signIn = async (req, res) => {
         role: user.role,
     }
     const token = await user.generateToken()
+    console.log(token)
         return res.send({ user: publicUser, token })
     } catch (error) {
         return res.status(200).send({ error: error.message })
@@ -32,12 +35,12 @@ exports.signUp = async (req, res) => {
         res.status(400).json({ message: 'No field can be empty!' })
         return
     }
-    console.log("new")
     try {
         const newUser = new User({
         email: req.body.email,
         password: req.body.password,
         tokens: [],
+        role: req.body.role,
         })
         const token = await newUser.generateToken()
         const publicUser = {
