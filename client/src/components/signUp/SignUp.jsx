@@ -3,7 +3,7 @@ import axios from 'axios';
 import './SignUp.css'
 import signUpImg from './signup-image.jpg'
 import { use } from 'bcrypt/promises';
-
+import { useNavigate } from 'react-router-dom';
 const url = "http://localhost:5000/api/";
 
 
@@ -19,8 +19,10 @@ const SignUp = () => {
         const name = e.target.name;
         const value = e.target.value;
         setUserRegisteration({...userRegisteration, [name]: value})
-    }
+    };
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
+        
         e.preventDefault();
         const user = { ...userRegisteration }
         try {
@@ -29,9 +31,10 @@ const SignUp = () => {
             console.log(error)
         }
 
+        navigate('/signIn')
         
 
-    }
+    };
     return (
     <>
     <section className='signup'>

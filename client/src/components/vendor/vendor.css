@@ -1,15 +1,15 @@
-.signin-content {
+.vendor-content {
     text-align : center;
     display: inline-block;
     background-color: white;
     padding: 2px;
 }
-.signin-image {
+.vendor-image {
     vertical-align: top;
     float: right;
 }
 
-.signin-form {
+.vendor-form {
     color: black;
     vertical-align: top;
     float: left;
@@ -20,7 +20,7 @@
     padding: 1rem;
 }
 
-.signin {
+.vendor {
     background-color: white;
     height: 50vh;
     width: 100vh;
