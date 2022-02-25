@@ -15,6 +15,9 @@ app.use(
     extended: true,
   })
 )
+var cors = require('cors')
+
+app.use(cors())
 
 app.get('/', (req, res) => {
   res.send('Server running')
