@@ -1,0 +1,32 @@
+.signup-content {
+    text-align : center;
+    display: inline-block;
+    background-color: white;
+    padding: 2px;
+}
+.signup-image {
+    vertical-align: top;
+    float: right;
+}
+
+.signup-form {
+    color: black;
+    vertical-align: top;
+    float: left;
+}
+
+.form-group {
+    vertical-align: top;
+    padding: 1rem;
+}
+
+.signup {
+    background-color: white;
+    height: 50vh;
+    width: 100vh;
+}
+
+.radio-buttons {
+    font-size: medium;
+    float: left;
+}
