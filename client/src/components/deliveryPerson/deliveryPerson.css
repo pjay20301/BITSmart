@@ -1,0 +1,27 @@
+.deliveryPerson-content {
+  text-align: center;
+  display: inline-block;
+  background-color: white;
+  padding: 2px;
+}
+.deliveryPerson-image {
+  vertical-align: top;
+  float: right;
+}
+
+.deliveryPerson-form {
+  color: black;
+  vertical-align: top;
+  float: left;
+}
+
+.form-group {
+  vertical-align: top;
+  padding: 1rem;
+}
+
+.deliveryPerson {
+  background-color: white;
+  height: 50vh;
+  width: 100vh;
+}
