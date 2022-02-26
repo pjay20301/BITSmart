@@ -26,7 +26,7 @@ const Customer = () => {
     const user = { ...customerRegister }
     try {
       console.log(user)
-      axios.post(url + 'customer', user)
+      axios.post(url + 'customer/signUp', user)
     } catch (error) {
       console.log(error)
     }

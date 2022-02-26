@@ -27,7 +27,7 @@ exports.signUp = async (req, res) => {
         })
         .catch((err) => {
             console.log(err)
-            res.status(500).send({ error: 'Customer registeration failed' })
+            res.status(500).send({ error: 'Vendor registeration failed' })
         })
         //return res.status(201).send({ user: publicCustomer})
     } catch (error) {

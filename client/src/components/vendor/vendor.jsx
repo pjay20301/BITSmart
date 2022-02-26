@@ -26,8 +26,7 @@ const Vendor = () => {
     e.preventDefault()
     const user = { ...vendorRegister }
     try {
-      console.log(user)
-      axios.post(url + 'vendor', user)
+      axios.post(url + 'vendor/signUp', user)
     } catch (error) {
       console.log(error)
     }

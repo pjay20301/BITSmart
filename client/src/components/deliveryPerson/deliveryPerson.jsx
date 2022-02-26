@@ -24,8 +24,7 @@ const DeliveryPerson = () => {
     e.preventDefault()
     const user = { ...deliveryPersonRegister }
     try {
-      console.log(user)
-      axios.post(url + 'deliveryPerson', user)
+      axios.post(url + 'deliveryPerson/signUp', user)
     } catch (error) {
       console.log(error)
     }
@@ -93,4 +92,4 @@ const DeliveryPerson = () => {
   )
 }
 
-export default deliveryPerson
+export default DeliveryPerson

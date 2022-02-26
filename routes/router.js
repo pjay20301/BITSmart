@@ -2,6 +2,7 @@ const express = require('express')
 const user = require('../controller/controller')
 const customer = require('../controller/customer')
 const vendor = require('../controller/vendor')
+const deliveryPerson = require('../controller/deliveryPerson')
 const auth = require('../middleware/auth.js')
 
 const jsonParser = express.json()
@@ -18,7 +19,7 @@ router.post('/api/customer/signUp', jsonParser, customer.signUp)
 
 router.post('/api/vendor/signUp', jsonParser, vendor.signUp)
 
-// router.post('/api/deliveryPerson/signUp', jsonParser, user.deliveryPersonSignUp)
+router.post('/api/deliveryPerson/signUp', jsonParser, deliveryPerson.signUp)
 
 
 module.exports = router
