@@ -17,6 +17,10 @@ var vendor = mongoose.Schema ({
         type: String,
         required: true,
         unique: true
+    },
+    status: {
+        type: Boolean,
+        default: false
     }
 })
 

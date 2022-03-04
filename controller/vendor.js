@@ -1,5 +1,8 @@
 const mongoose = require('mongoose')
 const Vendor = require('../models/vendor')
+const Product = require('../models/product')
+const cloudinary = require('cloudinary');
+const multer = require('multer')
 
 exports.signUp = async (req, res) => {
     if (req.body.name == '' || req.body.address == '' || req.body.phone == '' || req.body.shopName == '') {
@@ -19,6 +22,7 @@ exports.signUp = async (req, res) => {
         shopName: newVendor.shopName,
         adderess: newVendor.address,
         phone: newVendor.phone,
+        status: newVendor.status
         }
         newVendor
         .save(newVendor)
@@ -34,4 +38,33 @@ exports.signUp = async (req, res) => {
         console.log(error)
         return res.status(200).send({ error: 'Phone number taken' })
     }
+}
+
+exports.create = async (req, res) => {
+    if(req.body.name == '' || req.body.price == '' || req.body.description == '' || req.body.stock == '') {
+        res.status(400).json({ message: 'No field can be empty!' })
+        return
+    }
+    try {
+        console.log(req.file.filename)
+        const newProduct = new Product({
+            name: req.body.name,
+            price: req.body.price,
+            description: req.body.description,
+            stock: req.body.stock,
+            image: req.file.filename
+        })
+        console.log(newProduct)
+        newProduct
+            .save(newProduct)
+            .then((data) => {
+            res.send(data)
+            })
+            .catch((err) => {
+            console.log(err)
+            res.status(500).send({ error: 'Product creation failed' })
+            })
+        } catch (error) {
+            return res.status(200).send(error)
+        }
 }
