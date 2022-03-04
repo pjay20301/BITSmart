@@ -33,7 +33,6 @@ exports.signUp = async (req, res) => {
             console.log(err)
             res.status(500).send({ error: 'Vendor registeration failed' })
         })
-        //return res.status(201).send({ user: publicCustomer})
     } catch (error) {
         console.log(error)
         return res.status(200).send({ error: 'Phone number taken' })
