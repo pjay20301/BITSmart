@@ -132,7 +132,7 @@ const SignUp = () => {
             <img src={signUpImg} alt='sign up image'></img>
             </figure>
             <a href='/signIn' className='signup-image-link'>
-            I am already member
+            I am already a member
             </a>
         </div>
         </div>
