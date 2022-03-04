@@ -35,6 +35,7 @@
     float: left;
     background-color: white;
     width: 400px;
+    margin-top: 3rem;
 }
 
 .form-group {
@@ -85,3 +86,7 @@ label {
 label i{
     background-color: white;
 }
+
+input[type="radio"]{
+    margin: 0 10px 0 10px;
+  }
