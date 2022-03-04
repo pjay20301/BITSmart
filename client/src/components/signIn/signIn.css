@@ -1,27 +1,98 @@
+@import url("https://https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  margin: auto;
+  background-color: #f0f0f0;
+}
+
+.container{
+    background: white;
+    height: 600px;
+    border: 1px solid;
+    border-color: white;
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 70px;
+    width: 100%;
+}
 .signin-content {
     text-align : center;
     display: inline-block;
     background-color: white;
     padding: 2px;
+    margin-top: 3rem;
 }
 .signin-image {
     vertical-align: top;
-    float: right;
+    float: left;
+    margin-top: 7rem;
 }
 
 .signin-form {
     color: black;
     vertical-align: top;
-    float: left;
+    background-color: white;
+    float: right;
+    width: 350px;
 }
 
 .form-group {
     vertical-align: top;
     padding: 1rem;
+    background-color: white;
 }
 
 .signin {
-    background-color: white;
     height: 50vh;
     width: 100vh;
+    background-color: white;
+}
+.form-submit {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #5402b3;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.9;
+    border-radius: 30px;
+    margin-left: 5%;
+ }
+
+ .form-title{
+    font-weight: 800;
+    background-color: white;
+}
+.signin-image {
+    background-color: white;
+    margin-left: 2rem;
+}
+.signin-image a{
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+input {
+    width: 80%;
+    padding: 8px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-left-style: none;
+    background-color: white;
+    border-width: thin;
+ }
+ label {
+    text-align: right;
+    float:left;
+    margin-right:1px;
+    background-color: white;
+}
+label i{
+    background-color: white;
 }

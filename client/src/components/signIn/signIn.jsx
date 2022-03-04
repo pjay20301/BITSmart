@@ -30,7 +30,7 @@ const handleSubmit = (e) => {
         console.log(error)
     }
 
-    navigate('/Dashboard')
+    navigate('/vendorDashboard')
 }
     return (
         <>
