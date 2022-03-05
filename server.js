@@ -19,9 +19,9 @@ var cors = require('cors')
 
 app.use(cors())
 
-app.get('/', (req, res) => {
-  res.send('Server running')
-})
+// app.get('/', (req, res) => {
+//   res.send('Server running')
+// })
 
 app.use('/', require('./routes/router'))
 
