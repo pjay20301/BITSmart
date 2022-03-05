@@ -4,7 +4,8 @@ import './SignUp.css'
 import signUpImg from './signup-image.jpg'
 import { use } from 'bcrypt/promises';
 import { useNavigate } from 'react-router-dom';
-const url = 'https://bits-smart.herokuapp.com/api/'
+const port = process.env.PORT
+const url = 'https://bits-smart.herokuapp.com:' + port + '/api/'
 
 
 const SignUp = () => {
