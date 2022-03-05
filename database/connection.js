@@ -10,17 +10,17 @@ const connectDB = async () => {
         //useFindAndModify: false,
         //useCreateIndex: true,
         })
-        const connect = mongoose.createConnection(process.env.URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        })
+        // const connect = mongoose.createConnection(process.env.URI, {
+        //     useNewUrlParser: true,
+        //     useUnifiedTopology: true,
+        // })
 
-        connect.once('open', () => {
-            // initialize stream
-            gfs = new mongoose.mongo.GridFSBucket(connect.db, {
-                bucketName: 'uploads',
-            })
-        })
+        // connect.once('open', () => {
+        //     // initialize stream
+        //     gfs = new mongoose.mongo.GridFSBucket(connect.db, {
+        //         bucketName: 'uploads',
+        //     })
+        // })
         console.log(`MongoDB connected : ${con.connection.host}`)
     } catch (err) {
         console.log(err)
