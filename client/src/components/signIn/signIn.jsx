@@ -4,9 +4,10 @@ import './signIn.css'
 import signInImg from './signin-image.jpg'
 import { use } from 'bcrypt/promises'
 import { useNavigate } from 'react-router-dom'
-const url = 'http://localhost:5000/api/';
 
+const url = 'http://localhost:5000/api/'
 const SignIn = () => {
+
     const [userLogin, setUserLogin] = useState({
         email: '',
         password: ''

@@ -59,6 +59,6 @@ router.post('/api/deliveryPerson/signUp', jsonParser, deliveryPerson.signUp)
 
 router.post('/api/create', upload, jsonParser,  vendor.create)
 
-router.get('/api/view', jsonParser, vendor.view)
+router.get('/api/all', jsonParser, vendor.view)
 
 module.exports = router

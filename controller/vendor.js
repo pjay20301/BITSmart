@@ -49,6 +49,16 @@ exports.create = async (req, res) => {
     }
     try {
         console.log(req.file.filename)
+        // const imagesLinks = [];
+        // const result = await cloudinary.v2.uploader.upload(image, {
+        //     folder: 'products',
+        // })
+
+        // imagesLinks.push({
+        //     public_id: result.public_id,
+        //     url: result.secure_url,
+        // })
+        // req.body.image = imagesLinks
         const newProduct = new Product({
             name: req.body.name,
             price: req.body.price,
@@ -72,13 +82,15 @@ exports.create = async (req, res) => {
 }
 
 exports.view = async(req, res) => {
-    Product.find({}, {}).then((data) => {
+    Product.find({}).then((data) => {
         if(!data) {
             return res.status(200).json({
                 success: false,
                 message: 'No data available'
             });
         }
+        //gfs.openDownloadStreamByName(req.params.filename).pipe(res);
+        console.log(data)
         res.status(200).json({
             success: true,
             data

@@ -1,23 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Rating } from '@material-ui/lab'
-
+//import srcimg from '../../images/logo192.png'
 const ProductCard = ({ product }) => {
-    const options = {
-        value: product.ratings,
-        readOnly: true,
-        precision: 0.5,
-    }
+    const imgurl = product.image
+    console.log(imgurl)
     return (
-        <Link className='productCard' to='/view'>
-            <img src={product.image[0].url} alt={product.name} />
-            <p>{product.name}</p>
+        <Link className='productCard' to='/all'>
+            <img
+                src={require(`../../images/${imgurl}`)}
+                alt={product.name}
+            />
             <div>
-                <Rating {...options} />{' '}
-                <span className='productCardSpan'>
-                    {' '}
-                    ({product.numOfReviews} Reviews)
-                </span>
+                <p>{product.name}</p>
             </div>
             <span>{`₹${product.price}`}</span>
         </Link>

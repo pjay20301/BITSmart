@@ -1,24 +1,25 @@
 import React, { Fragment, useEffect } from 'react'
-//import { CgMouse } from 'react-icons/all'
 import './viewProduct.css'
 import ProductCard from './productCard.jsx'
-import { useSelector} from 'react-redux'
 import axios from 'axios'
 import { useState } from 'react'
 
-const url = 'http://localhost:5000/api';
+const url = 'http://localhost:5000/api/'
 
 const ViewProduct = () => {
-    
-    const [products, setProduct] = useState([]);
+    const [products, setProduct] = useState([])
+    //let products = [];
     useEffect(() => {
         async function fetchData() {
-            const response = axios.get(url + '/view')
+            const response = await axios.get(url + 'all')
             setProduct(response.data)
+            //products = response.data
+            console.log(products)
         }
         fetchData()
-    }, []) 
-    
+    }) 
+    console.log('products: ' + products)
+    //const products = await axios.get(url + '/all');
     return (
         <Fragment>
             {/* <div className='banner'>
@@ -29,8 +30,9 @@ const ViewProduct = () => {
             <h2 className='homeHeading'>Featured Products</h2>
 
             <div className='container' id='container'>
-                {products &&
-                    products.map((product) => (
+                <h1>Products</h1>
+                {products.data &&
+                    products.data.map((product) => (
                         <ProductCard
                             key={product._id}
                             product={product}
