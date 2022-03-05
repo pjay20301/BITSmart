@@ -2,7 +2,10 @@ const mongoose = require('mongoose')
 const Vendor = require('../models/vendor')
 const Product = require('../models/product')
 const cloudinary = require('cloudinary');
-const multer = require('multer')
+const multer = require('multer');
+const { GridFsStorage } = require('multer-gridfs-storage');
+const { gfs } = require('../database/connection')
+    
 
 exports.signUp = async (req, res) => {
     if (req.body.name == '' || req.body.address == '' || req.body.phone == '' || req.body.shopName == '') {
@@ -66,4 +69,19 @@ exports.create = async (req, res) => {
         } catch (error) {
             return res.status(200).send(error)
         }
+}
+
+exports.view = async(req, res) => {
+    Product.find({}, {}).then((data) => {
+        if(!data) {
+            return res.status(200).json({
+                success: false,
+                message: 'No data available'
+            });
+        }
+        res.status(200).json({
+            success: true,
+            data
+        });
+    })
 }

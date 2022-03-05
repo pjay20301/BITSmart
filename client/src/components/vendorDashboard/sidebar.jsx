@@ -31,7 +31,7 @@ const Sidebar = () => {
         defaultExpandIcon={<ImportExportIcon />}
         >
         <TreeItem nodeId='1' label='Products'>
-            <Link to='/signIn'>
+            <Link to='/all'>
             <TreeItem nodeId='2' label='All' icon={<PostAddIcon />} />
             </Link>
 
