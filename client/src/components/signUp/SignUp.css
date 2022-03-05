@@ -1,3 +1,23 @@
+@import url("https://https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin: auto;
+    background-color: #f0f0f0;
+  }
+
+  .container{
+        background: white;
+        height: 600px;
+        border: 1px solid;
+        border-color: white;
+        border-radius: 25px;
+        padding: 10px;
+        margin-top: 70px;
+        width: 100%;
+        box-shadow: 5px 10px #e6e6e6;
+  }
 .signup-content {
     text-align : center;
     display: inline-block;
@@ -7,12 +27,16 @@
 .signup-image {
     vertical-align: top;
     float: right;
+    margin-top: 5rem;
 }
 
 .signup-form {
     color: black;
     vertical-align: top;
     float: left;
+    background-color: white;
+    width: 400px;
+    margin-top: 3rem;
 }
 
 .form-group {
@@ -30,3 +54,40 @@
     font-size: medium;
     float: left;
 }
+
+.form-title{
+    font-weight: 800;
+    background-color: white;
+}
+.signup-image {
+    background-color: white;
+}
+.signup-image a{
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
+input[type=email], input[type=password]{
+    width: 80%;
+    padding: 8px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-left-style: none;
+    background-color: white;
+    border-width: thin;
+ }
+label {
+    text-align: right;
+    float:left;
+    margin-right:1px;
+    background-color: white;
+}
+label i{
+    background-color: white;
+}
+
+input[type="radio"]{
+    margin: 0 10px 0 10px;
+  }
