@@ -28,7 +28,7 @@
 .signin-image {
     vertical-align: top;
     float: left;
-    margin-top: 7rem;
+    margin-top: 0rem;
     background-color: white;
 }
 
@@ -37,7 +37,8 @@
     vertical-align: top;
     background-color: white;
     float: right;
-    width: 350px;
+    width: 300px;
+    margin-top: 4rem;
 }
 
 .form-group {
@@ -70,6 +71,9 @@
     font-weight: 800;
     background-color: white;
 }
+.signin-image img{
+    background-color: white;
+}
 .signin-image a{
     background-color: white;
     color: black;
@@ -93,4 +97,13 @@ input[type=email], input[type=password]{
 }
 input[type=email]+label i, input[type=password]+label i{
     background-color: white;
+}
+
+text {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color: #5402b3;
+    font-size: 18px;
+    font-weight: bold;
 }

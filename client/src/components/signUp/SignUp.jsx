@@ -4,6 +4,7 @@ import './SignUp.css'
 import signUpImg from './signup-image.jpg'
 import { use } from 'bcrypt/promises';
 import { useNavigate } from 'react-router-dom';
+import logo from './logo.jpeg'
 const url = 'http://localhost:5000/api/'
 
 
@@ -128,6 +129,10 @@ const SignUp = () => {
             </div>
         </div>
         <div className='signup-image'>
+            <figure>
+                <img src={logo} alt='logo' style={{width: 200, height: 100}}></img>
+            </figure>
+            <text>Shop smart with BITSmart</text>
             <figure>
             <img src={signUpImg} alt='sign up image'></img>
             </figure>
