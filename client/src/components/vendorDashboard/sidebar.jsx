@@ -11,6 +11,7 @@ import ListAltIcon from '@material-ui/icons/ListAlt'
 import DashboardIcon from '@material-ui/icons/Dashboard'
 import PeopleIcon from '@material-ui/icons/People'
 import RateReviewIcon from '@material-ui/icons/RateReview'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const Sidebar = () => {
 
@@ -26,20 +27,18 @@ const Sidebar = () => {
         </p>
         </Link>
         {/* <Link> */}
-        <TreeView
-        defaultCollapseIcon={<ExpandMoreIcon />}
-        defaultExpandIcon={<ImportExportIcon />}
-        >
-        <TreeItem nodeId='1' label='Products'>
-            <Link to='/all'>
-            <TreeItem nodeId='2' label='All' icon={<PostAddIcon />} />
-            </Link>
-
-            <Link to='/create'>
-            <TreeItem nodeId='3' label='Create' icon={<AddIcon />} />
-            </Link>
-        </TreeItem>
-        </TreeView>
+        <Link to='/all'>
+        <p>
+            <PostAddIcon />
+            View Products
+        </p>
+        </Link>
+        <Link to='/create'>
+        <p>
+            <AddIcon />
+            Add Product
+        </p>
+        </Link>
         {/* </Link> */}
         <Link to='/signIn'>
         <p>
@@ -56,6 +55,12 @@ const Sidebar = () => {
         <p>
             <RateReviewIcon />
             Reviews
+        </p>
+        </Link>
+        <Link to='/signIn'>
+        <p>
+            <ExitToAppIcon />
+            Logout
         </p>
         </Link>
     </div>

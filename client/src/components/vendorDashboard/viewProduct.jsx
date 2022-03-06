@@ -3,6 +3,7 @@ import './viewProduct.css'
 import ProductCard from './productCard.jsx'
 import axios from 'axios'
 import { useState } from 'react'
+import SideBar from './sidebar'
 
 const url = 'http://localhost:5000/api/'
 
@@ -26,7 +27,7 @@ const ViewProduct = () => {
                 <p>Welcome to Ecommerce</p>
                 <h1>FIND AMAZING PRODUCTS BELOW</h1>
             </div> */}
-
+            <SideBar />
             <h2 className='homeHeading'>Featured Products</h2>
 
             <div className='container' id='container'>
