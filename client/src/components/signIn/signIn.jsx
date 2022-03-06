@@ -4,6 +4,7 @@ import './signIn.css'
 import signInImg from './signin-image.jpg'
 import { use } from 'bcrypt/promises'
 import { useNavigate } from 'react-router-dom'
+import logo from './logo.jpeg'
 
 const url = 'http://localhost:5000/api/'
 const SignIn = () => {
@@ -81,6 +82,10 @@ const handleSubmit = (e) => {
                 </div>
             </div>
             <div className='signin-image'>
+                <figure>
+                <img src={logo} alt='logo' style={{width: 200, height: 100}}></img>
+                </figure>
+                <text>Shop smart with BITSmart</text>
                 <figure>
                 <img src={signInImg} alt='sign up image'></img>
                 </figure>
