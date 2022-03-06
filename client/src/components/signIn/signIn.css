@@ -29,6 +29,7 @@
     vertical-align: top;
     float: left;
     margin-top: 7rem;
+    background-color: white;
 }
 
 .signin-form {
@@ -68,10 +69,6 @@
  .form-title{
     font-weight: 800;
     background-color: white;
-}
-.signin-image {
-    background-color: white;
-    margin-left: 2rem;
 }
 .signin-image a{
     background-color: white;

@@ -18,6 +18,11 @@
         width: 100%;
         box-shadow: 5px 10px #e6e6e6;
   }
+  .signup {
+    background-color: white;
+    height: 50vh;
+    width: 100vh;
+}
 .signup-content {
     text-align : center;
     display: inline-block;
@@ -26,16 +31,17 @@
 }
 .signup-image {
     vertical-align: top;
-    float: right;
+    float: left;
     margin-top: 5rem;
+    background-color: white;
 }
 
 .signup-form {
     color: black;
     vertical-align: top;
-    float: left;
+    float: right;
     background-color: white;
-    width: 400px;
+    width: 300px;
     margin-top: 3rem;
 }
 
@@ -44,11 +50,7 @@
     padding: 1rem;
 }
 
-.signup {
-    background-color: white;
-    height: 50vh;
-    width: 100vh;
-}
+
 
 .radio-buttons {
     font-size: medium;
@@ -57,9 +59,6 @@
 
 .form-title{
     font-weight: 800;
-    background-color: white;
-}
-.signup-image {
     background-color: white;
 }
 .signup-image a{
