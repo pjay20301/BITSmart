@@ -13,25 +13,25 @@ import ViewProduct from './components/vendorDashboard/viewProduct';
 
 function App() {
   
-  return (
-      <Router>
-          <Routes>
-              <Route exact path='/' element={<SignUp />} />
-              <Route exact path='/signIn' element={<SignIn />} />
-              <Route exact path='/signUp' element={<SignUp />} />
-              <Route exact path='/customer/signUp' element={<Customer />} />
-              <Route exact path='/vendor/signUp' element={<Vendor />} />
-              <Route
-                  exact
-                  path='/deliveryPerson/signUp'
-                  element={<DeliveryPerson />}
-              />
-              <Route exact path='/vendorDashboard' element={<Sidebar />} />
-              <Route exact path='/create' element={<CreateProduct />} />
-              <Route exact path='/all' element={<ViewProduct />} />
-          </Routes>
-      </Router>
-  )
+    return (
+        <Router>
+            <Routes>
+                <Route exact path='/' element={<SignUp />} />
+                <Route exact path='/signIn' element={<SignIn />} />
+                <Route exact path='/signUp' element={<SignUp />} />
+                <Route exact path='/customer/signUp' element={<Customer />} />
+                <Route exact path='/vendor/signUp' element={<Vendor />} />
+                <Route
+                    exact
+                    path='/deliveryPerson/signUp'
+                    element={<DeliveryPerson />}
+                />
+                <Route exact path='/vendorDashboard' element={<Sidebar />} />
+                <Route exact path='/create' element={<CreateProduct />} />
+                <Route exact path='/all' element={<ViewProduct />} />
+            </Routes>
+        </Router>
+    )
 }
 
 export default App;
