@@ -10,6 +10,14 @@ const { connectDB } = require('./database/connection')
 
 connectDB()
 
+app.use(
+    express.urlencoded({
+        extended: true,
+    })
+)
+
+app.use('/', require('./routes/router'))
+
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('build'))
     app.get('*', (req, res) => {
@@ -17,15 +25,11 @@ if (process.env.NODE_ENV === 'production') {
     })
 }
 
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-)
+
 var cors = require('cors')
 
 app.use(cors())
-app.use('/', require('./routes/router'))
+
 
 app.listen(port, () => {
     console.log(`server is running on port https://localhost:${port}`)
