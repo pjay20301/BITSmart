@@ -90,7 +90,7 @@ exports.view = async(req, res) => {
             });
         }
         //gfs.openDownloadStreamByName(req.params.filename).pipe(res);
-        console.log(data)
+        // console.log(data)
         res.status(200).json({
             success: true,
             data

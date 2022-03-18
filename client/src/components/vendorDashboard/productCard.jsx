@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-//import srcimg from '../../images/logo192.png'
+
 const ProductCard = ({ product }) => {
     const imgurl = product.image
     console.log(imgurl)
