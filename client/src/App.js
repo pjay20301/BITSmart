@@ -12,7 +12,7 @@ import ViewProduct from './components/vendorDashboard/viewProduct';
 
 
 function App() {
-  
+    console.log("in react app.js")
     return (
         <Router>
             <Routes>

@@ -20,9 +20,9 @@ app.use('/', require('./routes/router'))
 
 if (process.env.NODE_ENV === 'production') {
     app.use('/static', express.static(path.resolve("./client/build")))
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve('./client/src/index.js'))
-    })
+    // app.get('*', (req, res) => {
+    //     res.sendFile(path.resolve('./client/src/index.js'))
+    // })
 }
 
 
