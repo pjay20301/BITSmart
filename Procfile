@@ -1,1 +1,1 @@
-web: npm install && nodemon server.js && cd client && npm install && npm run build
+web: npm start
