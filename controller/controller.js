@@ -67,15 +67,17 @@ exports.signOut = async (req, res) => {
 
 exports.getRole = async (req,res) => {
     try {
-        const emailId = req.params.email
-        User.findOne({"email": emailId})
+        const emailId = req.params.id
+        console.log(emailId)
+        User.findOne({email:emailId})
         .then((data) => {
             if(!data) {
                 return res.status(404).send({
                     message: `cannot find email by email id ${emailId}`
                 })
             } else {
-                return res.send(data.data)
+                console.log(data.role)
+                return res.send(data.role)
             }
         })
     } catch(e) {

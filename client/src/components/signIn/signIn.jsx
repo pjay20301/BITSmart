@@ -23,38 +23,29 @@ const handleInput = (e) => {
     setUserLogin({...userLogin, [name]: value})
     }
 const navigate = useNavigate();
-
-const [User, setUser] = useState({
-    email: '',
-    password: '',
-    role: ''
-})
-async function getRole(email) {
-    const response = await axios.get(url + `api/getRole/${email}`)
-    console.log(response)
-    setUser(response)
-    return response
-}
-const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
     const user = { ...userLogin }
     try {
         console.log(user)
         axios.post(url + 'api/signIn', user)
+        const response = await axios.get(url + `api/getRole/${user.email}`)
+        const role = response.data
+        if (role === 'customer') {
+            navigate('/all')
+        } else if (role === 'vendor') {
+            navigate('/vendorDashboard')
+        } else if (role === 'deliveryPerson') {
+            navigate('/deliveryPersonDashboard')
+        }
+            
     } catch (error) {
         console.log(error)
     }
     //const user1 = getRole(user.email)
-    getRole(user.email)
-    const user1 = {...User}
-    console.log(user1.role)
-    if (user1.role === 'customer') {
-        navigate('/all')
-    } else if (user1.role === 'vendor') {
-        navigate('/vendorDashboard')
-    } else if (user1.role === 'deliveryPerson') {
-        navigate('/deliveryPersonDashboard')
-    }
+    
+    
+
 }
     return (
         <>
