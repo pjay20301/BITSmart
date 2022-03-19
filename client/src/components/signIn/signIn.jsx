@@ -31,8 +31,9 @@ const [User, setUser] = useState({
 })
 async function getRole(email) {
     const response = await axios.get(url + `api/getRole/${email}`)
-    console.log(response.data)
-    setUser(response.data)
+    console.log(response)
+    setUser(response)
+    return response
 }
 const handleSubmit = (e) => {
     e.preventDefault();
