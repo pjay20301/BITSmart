@@ -48,7 +48,7 @@ const handleSubmit = async (e) => {
 }
     return (
         <>
-            <div className='topbar'>
+            {/* <div className='topbar'>
                 <Link to='/'>
                     <img src={logo} alt='Ecommerce' />
                 </Link>
@@ -82,7 +82,7 @@ const handleSubmit = async (e) => {
                         Register
                     </p>
                 </Link>
-            </div>
+            </div> */}
             <section className='signin'>
                 <div className='container'>
                     <div className='signin-content'>

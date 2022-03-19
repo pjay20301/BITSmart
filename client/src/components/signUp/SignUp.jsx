@@ -42,7 +42,7 @@ const SignUp = () => {
     }
     return (
         <>
-            <div className='topbar'>
+            {/* <div className='topbar'>
                 <Link to='/'>
                     <img src={logo} alt='Ecommerce' />
                 </Link>
@@ -76,7 +76,7 @@ const SignUp = () => {
                         Register
                     </p>
                 </Link>
-            </div>
+            </div> */}
             <section className='signup'>
                 <div className='container'>
                     <div className='signup-content'>
