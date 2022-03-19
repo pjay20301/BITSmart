@@ -42,6 +42,41 @@ const SignUp = () => {
     }
     return (
         <>
+            <div className='topbar'>
+                <Link to='/'>
+                    <img src={logo} alt='Ecommerce' />
+                </Link>
+                <Link to='/'>
+                    <p>
+                        <HomeIcon />
+                        Home
+                    </p>
+                </Link>
+                <Link to='/'>
+                    <p>
+                        <InfoIcon />
+                        About
+                    </p>
+                </Link>
+                <Link to='/'>
+                    <p>
+                        <PhoneIcon />
+                        Contact Us
+                    </p>
+                </Link>
+                <Link to='/signIn'>
+                    <p>
+                        <HowToRegIcon />
+                        SignIn
+                    </p>
+                </Link>
+                <Link to='/signUp'>
+                    <p>
+                        <GroupAddIcon />
+                        Register
+                    </p>
+                </Link>
+            </div>
             <section className='signup'>
                 <div className='container'>
                     <div className='signup-content'>
@@ -133,14 +168,14 @@ const SignUp = () => {
                         </div>
                     </div>
                     <div className='signup-image'>
-                        <figure>
+                        {/* <figure>
                             <img
                                 src={logo}
                                 alt='logo'
                                 style={{ width: 200, height: 100 }}
                             ></img>
                         </figure>
-                        <text>Shop smart with BITSmart</text>
+                        <text>Shop smart with BITSmart</text> */}
                         <figure>
                             <img src={signUpImg} alt='sign up image'></img>
                         </figure>
