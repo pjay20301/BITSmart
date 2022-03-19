@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect} from 'react'
 import axios from 'axios'
 import './signIn.css'
 import signInImg from './signin-image.jpg'
@@ -7,8 +7,13 @@ import { useNavigate } from 'react-router-dom'
 import logo from './logo.jpeg'
 import { Link } from 'react-router-dom'
 
-const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
+let url;
 const SignIn = () => {
+    if (process.env.NODE_ENV === 'production') {
+        url = 'https://bits-smart.herokuapp.com/' 
+    } else {
+        url = 'http://localhost:5000/'
+    }
 
     const [userLogin, setUserLogin] = useState({
         email: '',
@@ -22,7 +27,22 @@ const handleInput = (e) => {
     setUserLogin({...userLogin, [name]: value})
     }
 const navigate = useNavigate();
-
+// async function getRole(email) {
+//     await axios.get(url + `api/getRole/${email}`)
+//     .then((response) => {
+//         if(!response.data) {
+//             console.log("error occured while fetching role")
+//         } else {
+//             console.log(response.data)
+//             return response.data
+//         }
+//     })
+// }
+const [User, setUser] = useState()
+async function getRole(email) {
+    const response = await axios.get(url + `api/getRole/${email}`)
+    setUser(response.data)
+}
 const handleSubmit = (e) => {
     e.preventDefault();
     const user = { ...userLogin }
@@ -32,7 +52,10 @@ const handleSubmit = (e) => {
     } catch (error) {
         console.log(error)
     }
-    const user1 = axios.get(url + `api/getRole/${user.email}`)
+    //const user1 = getRole(user.email)
+    getRole(user.email)
+    const user1 = {...User}
+    console.log(user1)
     if (user1.role === 'customer') {
         navigate('/all')
     } else if (user1.role === 'vendor') {

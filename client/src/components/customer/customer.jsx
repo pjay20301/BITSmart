@@ -4,9 +4,14 @@ import './customer.css'
 import customerImg from './signup-image.jpg'
 import { use } from 'bcrypt/promises'
 import { useNavigate } from 'react-router-dom'
-const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
+let url
 
 const Customer = () => {
+  if (process.env.NODE_ENV === 'production') {
+      url = 'https://bits-smart.herokuapp.com/'
+  } else {
+      url = 'http://localhost:5000/'
+  }
   const [customerRegister, setCustomerRegister] = useState({
     name: '',
     address: '',

@@ -9,6 +9,9 @@ const port = process.env.PORT || 5000
 const { connectDB } = require('./database/connection')
 
 connectDB()
+var cors = require('cors')
+
+app.use(cors())
 
 app.use(
     express.urlencoded({
@@ -23,9 +26,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-var cors = require('cors')
 
-app.use(cors())
 
 
 app.listen(port, () => {

@@ -23,7 +23,6 @@ exports.signIn = async (req, res) => {
         role: user.role,
     }
     const token = await user.generateToken()
-    console.log(token)
         return res.send({ user: publicUser, token })
     } catch (error) {
         return res.status(200).send({ error: error.message })
@@ -69,14 +68,14 @@ exports.signOut = async (req, res) => {
 exports.getRole = async (req,res) => {
     try {
         const emailId = req.params.email
-        User.findById(emailId)
+        User.findOne({"email": emailId})
         .then((data) => {
             if(!data) {
                 return res.status(404).send({
                     message: `cannot find email by email id ${emailId}`
                 })
             } else {
-                return res.send(data)
+                return res.send(data.data)
             }
         })
     } catch(e) {
