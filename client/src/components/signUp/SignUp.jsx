@@ -4,9 +4,10 @@ import './SignUp.css'
 import signUpImg from './signup-image.jpg'
 import { useNavigate } from 'react-router-dom'
 import logo from './logo.jpeg'
-const url = 'http://localhost:5000/api/'
+const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
 
 const SignUp = () => {
+    console.log(url)
     const [userRegisteration, setUserRegisteration] = useState({
         email: '',
         password: '',
@@ -24,7 +25,7 @@ const SignUp = () => {
         e.preventDefault()
         const user = { ...userRegisteration }
         try {
-            axios.post(url + 'signUp', user)
+            axios.post(url + 'api/signUp', user)
         } catch (error) {
             console.log(error)
         }

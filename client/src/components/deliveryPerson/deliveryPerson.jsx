@@ -4,7 +4,7 @@ import './deliveryPerson.css'
 import deliveryPersonImg from './signup-image.jpg'
 import { use } from 'bcrypt/promises'
 import { useNavigate } from 'react-router-dom'
-const url = 'http://localhost:5000/api/'
+const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
 
 const DeliveryPerson = () => {
   const [deliveryPersonRegister, setdeliveryPersonRegister] = useState({
@@ -24,7 +24,7 @@ const DeliveryPerson = () => {
     e.preventDefault()
     const user = { ...deliveryPersonRegister }
     try {
-      axios.post(url + 'deliveryPerson/signUp', user)
+      axios.post(url + 'api/deliveryPerson/signUp', user)
     } catch (error) {
       console.log(error)
     }

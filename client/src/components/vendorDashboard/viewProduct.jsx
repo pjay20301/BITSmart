@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import SideBar from './sidebar'
 
-const url = 'http://localhost:5000/api/'
+const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
 
 const ViewProduct = () => {
     const [products, setProduct] = useState([])
@@ -14,13 +14,10 @@ const ViewProduct = () => {
         async function fetchData() {
             const response = await axios.get(url + 'all')
             setProduct(response.data)
-            //products = response.data
             console.log(products)
         }
         fetchData()
     }) 
-    console.log('products: ' + products)
-    //const products = await axios.get(url + '/all');
     return (
         <Fragment>
             {/* <div className='banner'>

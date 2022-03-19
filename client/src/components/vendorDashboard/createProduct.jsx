@@ -12,7 +12,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 
-const url = 'http://localhost:5000/api/'
+const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
 
 const CreateProduct = () => {
     const [imagesPreview, setImagesPreview] = useState([])
@@ -43,7 +43,7 @@ const CreateProduct = () => {
 
         console.log(myForm)
         try {
-            axios.post(url + 'create', myForm)
+            axios.post(url + 'api/create', myForm)
         } catch (error) {
             console.log(error)
         }

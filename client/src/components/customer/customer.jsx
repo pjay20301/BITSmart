@@ -4,7 +4,7 @@ import './customer.css'
 import customerImg from './signup-image.jpg'
 import { use } from 'bcrypt/promises'
 import { useNavigate } from 'react-router-dom'
-const url = 'http://localhost:5000/api/'
+const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
 
 const Customer = () => {
   const [customerRegister, setCustomerRegister] = useState({
@@ -26,7 +26,7 @@ const Customer = () => {
     const user = { ...customerRegister }
     try {
       console.log(user)
-      axios.post(url + 'customer/signUp', user)
+      axios.post(url + 'api/customer/signUp', user)
     } catch (error) {
       console.log(error)
     }

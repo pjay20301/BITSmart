@@ -6,7 +6,7 @@ import { use } from 'bcrypt/promises'
 import { useNavigate } from 'react-router-dom'
 import logo from './logo.jpeg'
 
-const url = 'http://localhost:5000/api/'
+const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
 const SignIn = () => {
 
     const [userLogin, setUserLogin] = useState({
@@ -27,7 +27,7 @@ const handleSubmit = (e) => {
     const user = { ...userLogin }
     try {
         console.log(user)
-        axios.post(url + 'signIn', user)
+        axios.post(url + 'api/signIn', user)
     } catch (error) {
         console.log(error)
     }
