@@ -9,14 +9,14 @@ import DeliveryPerson from './components/deliveryPerson/deliveryPerson.jsx';
 import Sidebar from './components/vendorDashboard/sidebar';
 import CreateProduct from './components/vendorDashboard/createProduct';
 import ViewProduct from './components/vendorDashboard/viewProduct';
-
+import LandingPage from './components/lp/lp.jsx'
 
 function App() {
     console.log("in react app.js")
     return (
         <Router>
             <Routes>
-                <Route exact path='/' element={<SignUp />} />
+                <Route exact path='/' element={<LandingPage />} />
                 <Route exact path='/signIn' element={<SignIn />} />
                 <Route exact path='/signUp' element={<SignUp />} />
                 <Route exact path='/customer/signUp' element={<Customer />} />

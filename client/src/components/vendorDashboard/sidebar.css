@@ -14,9 +14,10 @@
     width: 10%;
     height: 50px;
     background-color: #5402b3;
+    margin-left: 0;
 }
 .sidebar > a > img {
-    width: 100%;
+    width: 60%;
     height: 50px;
     background-color: #5402b3;
 }
