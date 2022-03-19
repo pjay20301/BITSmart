@@ -4,6 +4,7 @@ import './SignUp.css'
 import signUpImg from './signup-image.jpg'
 import { useNavigate } from 'react-router-dom'
 import logo from './logo.jpeg'
+import { Link } from 'react-router-dom'
 const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
 
 const SignUp = () => {
@@ -143,9 +144,8 @@ const SignUp = () => {
                         <figure>
                             <img src={signUpImg} alt='sign up image'></img>
                         </figure>
-                        <a href='/signIn' className='signup-image-link'>
-                            I am already a member
-                        </a>
+                        <Link to='/signIn'>I am already a member</Link>
+                        {/* <a href='/signIn' className='signup-image-link'></a> */}
                     </div>
                 </div>
             </section>

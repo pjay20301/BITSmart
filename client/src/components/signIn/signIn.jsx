@@ -5,6 +5,7 @@ import signInImg from './signin-image.jpg'
 import { use } from 'bcrypt/promises'
 import { useNavigate } from 'react-router-dom'
 import logo from './logo.jpeg'
+import { Link } from 'react-router-dom'
 
 const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
 const SignIn = () => {
@@ -42,67 +43,74 @@ const handleSubmit = (e) => {
 }
     return (
         <>
-        <section className='signin'>
-            <div className='container'>
-            <div className='signin-content'>
-                <div className='signin-form'>
-                <h2 className='form-title'>Sign in</h2>
-                <form method='POST' className='register-form' id='register-form'>
-                    <div className='form-group'>
-                    <label htmlFor='email'>
-                        <i className='zmdi zmdi-email'></i>
-                    </label>
-                    <input
-                        type='email'
-                        name='email'
-                        id='email'
-                        value={userLogin.email}
-                        onChange={handleInput}
-                        placeholder='Your Email'
-                    />
+            <section className='signin'>
+                <div className='container'>
+                    <div className='signin-content'>
+                        <div className='signin-form'>
+                            <h2 className='form-title'>Sign in</h2>
+                            <form
+                                method='POST'
+                                className='register-form'
+                                id='register-form'
+                            >
+                                <div className='form-group'>
+                                    <label htmlFor='email'>
+                                        <i className='zmdi zmdi-email'></i>
+                                    </label>
+                                    <input
+                                        type='email'
+                                        name='email'
+                                        id='email'
+                                        value={userLogin.email}
+                                        onChange={handleInput}
+                                        placeholder='Your Email'
+                                    />
+                                </div>
+                                <div className='form-group'>
+                                    <label htmlFor='pass'>
+                                        <i className='zmdi zmdi-lock'></i>
+                                    </label>
+                                    <input
+                                        type='password'
+                                        name='password'
+                                        id='password'
+                                        value={userLogin.password}
+                                        onChange={handleInput}
+                                        placeholder='Password'
+                                    />
+                                </div>
+                                <div className='form-group form-button'>
+                                    <input
+                                        type='submit'
+                                        name='signin'
+                                        id='signin'
+                                        className='form-submit'
+                                        value='Login'
+                                        onClick={handleSubmit}
+                                    />
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div className='form-group'>
-                    <label htmlFor='pass'>
-                        <i className='zmdi zmdi-lock'></i>
-                    </label>
-                    <input
-                        type='password'
-                        name='password'
-                        id='password'
-                        value={userLogin.password}
-                        onChange={handleInput}
-                        placeholder='Password'
-                    />
+                    <div className='signin-image'>
+                        <figure>
+                            <img
+                                src={logo}
+                                alt='logo'
+                                style={{ width: 200, height: 100 }}
+                            ></img>
+                        </figure>
+                        <text>Shop smart with BITSmart</text>
+                        <figure>
+                            <img src={signInImg} alt='sign up image'></img>
+                        </figure>
+                        <Link to='/signUp'>Create a new account?</Link>
+                        {/* <a href='/signUp' className='signin-image-link'></a> */}
                     </div>
-                    <div className='form-group form-button'>
-                    <input
-                        type='submit'
-                        name='signin'
-                        id='signin'
-                        className='form-submit'
-                        value='Login'
-                        onClick={handleSubmit}
-                    />
-                    </div>
-                </form>
                 </div>
-            </div>
-            <div className='signin-image'>
-                <figure>
-                <img src={logo} alt='logo' style={{width: 200, height: 100}}></img>
-                </figure>
-                <text>Shop smart with BITSmart</text>
-                <figure>
-                <img src={signInImg} alt='sign up image'></img>
-                </figure>
-                <a href='/signUp' className='signin-image-link'>
-                Create a new account?
-                </a>
-            </div>
-            </div>
-        </section>
+            </section>
         </>
-    );
+    )
 };
 
 export default SignIn;
