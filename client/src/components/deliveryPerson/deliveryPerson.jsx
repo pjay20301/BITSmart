@@ -29,7 +29,7 @@ const DeliveryPerson = () => {
       console.log(error)
     }
 
-    navigate('/Dashboard')
+    navigate('/deliverPersonDashboard')
   }
   return (
     <>

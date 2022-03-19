@@ -31,8 +31,14 @@ const handleSubmit = (e) => {
     } catch (error) {
         console.log(error)
     }
-
-    navigate('/vendorDashboard')
+    const user1 = axios.get(url + `api/getRole/${user.email}`)
+    if (user1.role === 'customer') {
+        navigate('/all')
+    } else if (user1.role === 'vendor') {
+        navigate('/vendorDashboard')
+    } else if (user1.role === 'deliveryPerson') {
+        navigate('/deliveryPersonDashboard')
+    }
 }
     return (
         <>

@@ -12,7 +12,7 @@ const ViewProduct = () => {
     //let products = [];
     useEffect(() => {
         async function fetchData() {
-            const response = await axios.get(url + 'all')
+            const response = await axios.get(url + 'api/all')
             setProduct(response.data)
             console.log(products)
         }

@@ -65,3 +65,21 @@ exports.signOut = async (req, res) => {
         return res.status(500).send(e)
     }
 }
+
+exports.getRole = async (req,res) => {
+    try {
+        const emailId = req.params.email
+        User.findById(emailId)
+        .then((data) => {
+            if(!data) {
+                return res.status(404).send({
+                    message: `cannot find email by email id ${emailId}`
+                })
+            } else {
+                return res.send(data)
+            }
+        })
+    } catch(e) {
+        return res.status(500).send(e)
+    }
+}

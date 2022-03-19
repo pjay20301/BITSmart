@@ -61,4 +61,6 @@ router.post('/api/create', upload, jsonParser,  vendor.create)
 
 router.get('/api/all', jsonParser, vendor.view)
 
+router.get('/api/getRole/:email', jsonParser, user.getRole)
+
 module.exports = router

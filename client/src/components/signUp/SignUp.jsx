@@ -29,8 +29,15 @@ const SignUp = () => {
         } catch (error) {
             console.log(error)
         }
-
-        navigate('/signIn')
+        
+        if(user.role === 'customer') {
+            navigate('/customer/signUp')
+        } else if(user.role === 'vendor') {
+            navigate('/vendor/signUp') 
+        } else if(user.role === 'deliveryPerson') {
+            navigate('deliveryPerson/signUp')
+        }
+        
     }
     return (
         <>

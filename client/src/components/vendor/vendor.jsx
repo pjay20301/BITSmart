@@ -31,7 +31,7 @@ const Vendor = () => {
       console.log(error)
     }
 
-    navigate('/Dashboard')
+    navigate('/vedorDashboard')
   }
   return (
     <>

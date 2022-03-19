@@ -31,7 +31,7 @@ const Customer = () => {
       console.log(error)
     }
 
-    navigate('/Dashboard')
+    navigate('/all')
   }
   return (
     <>
