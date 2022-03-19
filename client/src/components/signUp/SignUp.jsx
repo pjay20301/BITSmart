@@ -5,15 +5,10 @@ import signUpImg from './signup-image.jpg'
 import { useNavigate } from 'react-router-dom'
 import logo from './logo.jpeg'
 import { Link } from 'react-router-dom'
-
-let url
+const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
 
 const SignUp = () => {
-    if (process.env.NODE_ENV === 'production') {
-        url = 'https://bits-smart.herokuapp.com/'
-    } else {
-        url = 'http://localhost:5000/'
-    }
+    console.log(url)
     const [userRegisteration, setUserRegisteration] = useState({
         email: '',
         password: '',

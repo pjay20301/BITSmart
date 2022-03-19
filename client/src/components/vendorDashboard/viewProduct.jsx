@@ -5,15 +5,10 @@ import axios from 'axios'
 import { useState } from 'react'
 import SideBar from './sidebar'
 
-let url
+const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
 
 const ViewProduct = () => {
-    if (process.env.NODE_ENV === 'production') {
-        url = 'https://bits-smart.herokuapp.com/'
-    } else {
-        url = 'http://localhost:5000/'
-    }
-
+    
     const [products, setProduct] = useState([])
     //let products = [];
     useEffect(() => {
