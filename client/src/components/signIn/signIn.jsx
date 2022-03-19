@@ -14,7 +14,10 @@ const SignIn = () => {
         email: '',
         password: ''
     });
-
+    const [error, setError] = useState({
+        error: false,
+        msg: '',
+    })
 const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -27,7 +30,15 @@ const handleSubmit = async (e) => {
     const user = { ...userLogin }
     try {
         console.log(user)
-        axios.post(url + 'api/signIn', user)
+        try {
+            console.log(user)
+            const res = await axios.post(url + 'api/signIn', user)
+            console.log('res', res)
+        } catch (error) {
+            setError((err) => ({ ...err, error: true, msg: 'User not found' }))
+            console.log('error', error)
+        }
+        
         const response = await axios.get(url + `api/getRole/${user.email}`)
         const role = response.data
         if (role === 'customer') {
@@ -88,6 +99,16 @@ const handleSubmit = async (e) => {
                     <div className='signin-content'>
                         <div className='signin-form'>
                             <h2 className='form-title'>Sign in</h2>
+                            {error.error && (
+                                <p
+                                    style={{
+                                        color: 'red',
+                                        background: 'transparent',
+                                    }}
+                                >
+                                    {error.msg}
+                                </p>
+                            )}
                             <form
                                 method='POST'
                                 className='register-form'

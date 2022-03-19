@@ -5,7 +5,7 @@ import signUpImg from './signup-image.jpg'
 import { useNavigate } from 'react-router-dom'
 import logo from '../lp/logo1.png'
 import { Link } from 'react-router-dom'
-const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
+const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/'
 
 const SignUp = () => {
     console.log(url)
@@ -15,7 +15,10 @@ const SignUp = () => {
         rePassword: '',
         role: '',
     })
-
+    const [error, setError] = useState({
+        error: false,
+        msg: '',
+    })
     const handleInput = (e) => {
         const name = e.target.name
         const value = e.target.value
@@ -25,11 +28,21 @@ const SignUp = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         const user = { ...userRegisteration }
-        try {
-            axios.post(url + 'api/signUp', user)
-        } catch (error) {
-            console.log(error)
-        }
+        axios
+            .post(url + 'api/signUp', user)
+            .then((res) => {
+                console.log(res)
+                navigate('/signIn')
+            })
+            .catch((error) => {
+                // ERROR
+                console.log('axios error', error.response)
+                setError((err) => ({
+                    ...err,
+                    error: true,
+                    msg: error.response?.data.message,
+                }))
+            })
         
         if(user.role === 'customer') {
             navigate('/customer/signUp')
@@ -82,6 +95,16 @@ const SignUp = () => {
                     <div className='signup-content'>
                         <div className='signup-form'>
                             <h2 className='form-title'>Sign up</h2>
+                            {error.error && (
+                                <p
+                                    style={{
+                                        color: 'red',
+                                        background: 'transparent',
+                                    }}
+                                >
+                                    {error.msg}
+                                </p>
+                            )}
                             <form
                                 method='POST'
                                 className='register-form'

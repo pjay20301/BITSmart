@@ -30,8 +30,17 @@ exports.signIn = async (req, res) => {
 }
 
 exports.signUp = async (req, res) => {
-    if (req.body.email == '' || req.body.password == '') {
+    if (
+        req.body.email == '' ||
+        req.body.password == '' ||
+        req.body.rePassword == ''
+    ) {
         res.status(400).json({ message: 'No field can be empty!' })
+        return
+    }
+
+    if (req.body.role == '') {
+        res.status(400).json({ message: 'Select a role!' })
         return
     }
     try {
