@@ -32,7 +32,7 @@ const Vendor = () => {
       console.log(error)
     }
 
-    navigate('/vedorDashboard')
+    navigate('/vendorDashboard')
   }
   return (
     <>
