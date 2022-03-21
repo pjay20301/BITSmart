@@ -32,7 +32,8 @@
     transition: all 0.5s;
     height: 50px;
     background-color: #5402b3;
-    float: left;
+    float: left;    
+    margin-left: 60px;
 }
 
 .sidebar a > P {
