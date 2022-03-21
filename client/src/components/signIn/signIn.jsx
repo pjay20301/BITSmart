@@ -29,9 +29,7 @@ const handleSubmit = async (e) => {
     e.preventDefault();
     const user = { ...userLogin }
     try {
-        console.log(user)
         try {
-            console.log(user)
             const res = await axios.post(url + 'api/signIn', user)
             console.log('res', res)
         } catch (error) {
