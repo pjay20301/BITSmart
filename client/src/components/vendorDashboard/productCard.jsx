@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
                 <p>{product.name}</p>
             </div>
             <span>{`₹${product.price}`}</span>
-            <span>{`${product.description}`}</span>
+            {/* <span>{`${product.description}`}</span> */}
         </Link>
     )
 }
