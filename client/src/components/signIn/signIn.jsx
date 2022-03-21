@@ -84,7 +84,7 @@ const handleSubmit = async (e) => {
                 </Link>
             </div> */}
             <section className='signin'>
-                <div className='container'>
+                <div className='s-container'>
                     <div className='signin-content'>
                         <div className='signin-form'>
                             <h2 className='form-title'>Sign in</h2>
