@@ -35,7 +35,7 @@ const NavBar = () => {
             <SidebarHeader>
             <div className="closemenu" onClick={menuIconClick}>
                   {/* changing menu collapse icon on click */}
-               {/* {menuCollapse ? (
+              {/* {menuCollapse ? (
                   <AiOutlineMenuUnfold/>
                 ) : (
                   <AiOutlineMenuFold/>

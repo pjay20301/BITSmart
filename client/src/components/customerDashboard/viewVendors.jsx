@@ -7,13 +7,14 @@ import NavBar from './navbar';
 import axios from 'axios';
 import ProductCard from '../vendorDashboard/productCard.jsx'
 import { Link,useNavigate } from 'react-router-dom';
-const url = 'http://localhost:5000/api/'
+const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
+
 const ViewVendors = () => {
     const [products, setProduct] = useState([])
     //let products = [];
     useEffect(() => {
         async function fetchData() {
-            const response = await axios.get(url + 'all')
+            const response = await axios.get(url + 'api/all')
             setProduct(response.data)
             //products = response.data
             console.log(products)
