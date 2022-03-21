@@ -6,14 +6,12 @@ const ProductCard = ({ product }) => {
     console.log(imgurl)
     return (
         <Link className='productCard' to='/all'>
-            <img
-                src={require(`../../images/${imgurl}`)}
-                alt={product.name}
-            />
+            <img src={require(`../../images/${imgurl}`)} alt={product.name} />
             <div>
                 <p>{product.name}</p>
             </div>
             <span>{`₹${product.price}`}</span>
+            <span>{`${product.description}`}</span>
         </Link>
     )
 }
