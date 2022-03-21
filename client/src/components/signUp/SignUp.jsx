@@ -90,7 +90,7 @@ const SignUp = () => {
                 </Link>
             </div> */}
             <section className='signup'>
-                <div className='container'>
+                <div className='s-container'>
                     <div className='signup-content'>
                         <div className='signup-form'>
                             <h2 className='form-title'>Sign up</h2>
