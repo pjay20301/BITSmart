@@ -32,7 +32,6 @@ const SignUp = () => {
             .post(url + 'api/signUp', user)
             .then((res) => {
                 console.log(res)
-                navigate('/signIn')
             })
             .catch((error) => {
                 // ERROR

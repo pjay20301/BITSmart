@@ -40,7 +40,7 @@ const handleSubmit = async (e) => {
         const response = await axios.get(url + `api/getRole/${user.email}`)
         const role = response.data
         if (role === 'customer') {
-            navigate('/all')
+            navigate('/customerDashboard')
         } else if (role === 'vendor') {
             navigate('/vendorDashboard')
         } else if (role === 'deliveryPerson') {
