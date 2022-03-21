@@ -1,0 +1,15 @@
+.Dashboard-contents {
+    margin-left: 13rem;
+}
+.container{
+    background: rgb(254, 251, 255);
+    height: 700px;
+    border: 1px solid;
+    border-color: white;
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: calc(100%-10px);
+    width: 90%;
+    box-shadow: 5px 10px #e6e6e6;
+}
