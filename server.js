@@ -1,6 +1,7 @@
 const express = require('express')
 const dotenv = require('dotenv')
 const path = require('path')
+const cloudinary = require('cloudinary')
 const app = express()
 
 dotenv.config({ path: 'config.env' })
@@ -12,6 +13,12 @@ connectDB()
 var cors = require('cors')
 
 app.use(cors())
+
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET,
+})
 
 app.use(
     express.urlencoded({

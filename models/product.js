@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const Vendor = require('./vendor')
 
 var product = mongoose.Schema({
     name: {
@@ -18,10 +19,21 @@ var product = mongoose.Schema({
         required: true,
     },
     image: {
-        type: String,
-        required: true
-    }
-});
+        public_id: {
+            type: String,
+            required: true,
+        },
+        url: {
+            type: String,
+            required: true,
+        },
+    },
+    vendor: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Vendor',
+        required: true,
+    },
+})
 
 Product = mongoose.model('Product', product)
 

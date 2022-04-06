@@ -12,18 +12,18 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 
-const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
+const url = 'http://localhost:5000/'
 
 const CreateProduct = () => {
     const [imagesPreview, setImagesPreview] = useState([])
+    const [images, setImages] = useState([])
     const [product, setProduct] = useState({
         name: '',
         price: '',
         description: '',
         stock: '',
         image: ''
-    })
-
+    });
 
     const handleInput = (e) => {
         const name = e.target.name
@@ -43,7 +43,8 @@ const CreateProduct = () => {
 
         console.log(myForm)
         try {
-            axios.post(url + 'api/create', myForm)
+            
+            axios.post(url + 'api/create/' + user_id, myForm)
         } catch (error) {
             console.log(error)
         }
@@ -52,9 +53,8 @@ const CreateProduct = () => {
 
     const createProductImagesChange = (e) => {
         setProduct({...product, ['image']: e.target.files[0]})
-        setImagesPreview([])
+        setImagesPreview([e.target.files[0]])
     }
-
     return (
         <Fragment>
             <div className='dashboard'>
@@ -126,13 +126,10 @@ const CreateProduct = () => {
                         </div>
 
                         <div id='createProductFormImage'>
-                            {imagesPreview.map((image, index) => (
-                                <img
-                                    key={index}
-                                    src={image}
-                                    alt='Product Preview'
-                                />
-                            ))}
+                            <img
+                                src={product.image}
+                                alt='Product Preview'
+                            />
                         </div>
 
                         <Button

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import logo from '../lp/logo1.png'
 import { Link } from 'react-router-dom'
 
-const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
+const url = 'http://localhost:5000/'
 
 const SignIn = () => {
 
@@ -14,7 +14,10 @@ const SignIn = () => {
         email: '',
         password: ''
     });
-
+    const [error, setError] = useState({
+        error: false,
+        msg: '',
+    })
 const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -26,12 +29,18 @@ const handleSubmit = async (e) => {
     e.preventDefault();
     const user = { ...userLogin }
     try {
-        console.log(user)
-        axios.post(url + 'api/signIn', user)
+        try {
+            const res = await axios.post(url + 'api/signIn', user)
+            console.log('res', res)
+        } catch (error) {
+            setError((err) => ({ ...err, error: true, msg: 'User not found' }))
+            console.log('error', error)
+        }
+        
         const response = await axios.get(url + `api/getRole/${user.email}`)
         const role = response.data
         if (role === 'customer') {
-            navigate('/all')
+            navigate('/customerDashboard')
         } else if (role === 'vendor') {
             navigate('/vendorDashboard')
         } else if (role === 'deliveryPerson') {
@@ -88,6 +97,16 @@ const handleSubmit = async (e) => {
                     <div className='signin-content'>
                         <div className='signin-form'>
                             <h2 className='form-title'>Sign in</h2>
+                            {error.error && (
+                                <p
+                                    style={{
+                                        color: 'red',
+                                        background: 'transparent',
+                                    }}
+                                >
+                                    {error.msg}
+                                </p>
+                            )}
                             <form
                                 method='POST'
                                 className='register-form'

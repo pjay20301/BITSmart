@@ -1,27 +1,26 @@
 const mongoose = require('mongoose')
 
-var vendor = mongoose.Schema ({
+var vendor = mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
     shopName: {
         type: String,
-        required: true
+        required: true,
     },
     address: {
         type: String,
-        required: true
+        required: true,
     },
     phone: {
         type: String,
         required: true,
-        unique: true
     },
     status: {
         type: Boolean,
-        default: false
-    }
+        default: false,
+    },
 })
 
 const Vendor = mongoose.model('Vendor', vendor)
