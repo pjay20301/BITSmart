@@ -28,63 +28,82 @@ const NavBar = () => {
     };
     return (
         <>
-        
-        <div id="header">
-            {/* collapsed props to change menu size using menucollapse state */}
-          <ProSidebar collapsed={menuCollapse}>
-            <SidebarHeader>
-            <div className="closemenu" onClick={menuIconClick}>
-                  {/* changing menu collapse icon on click */}
-              {/* {menuCollapse ? (
+            <div id='header'>
+                {/* collapsed props to change menu size using menucollapse state */}
+                <ProSidebar collapsed={menuCollapse}>
+                    <SidebarHeader>
+                        <div className='closemenu' onClick={menuIconClick}>
+                            {/* changing menu collapse icon on click */}
+                            {/* {menuCollapse ? (
                   <AiOutlineMenuUnfold/>
                 ) : (
                   <AiOutlineMenuFold/>
                 )} */}
+                        </div>
+                        <div className='logotext'>
+                            {/* small and big change using menucollapse state */}
+                            <p>{menuCollapse ? 'BM' : 'BITSmart'}</p>
+                            {menuCollapse ? (
+                                <img
+                                    src={logo}
+                                    alt='Ecommerce'
+                                    width='40'
+                                    height='30'
+                                />
+                            ) : (
+                                <img
+                                    src={logo}
+                                    alt='Ecommerce'
+                                    width='70'
+                                    height='50'
+                                />
+                            )}
+                        </div>
+                    </SidebarHeader>
+                    <SidebarContent>
+                        <Menu iconShape='square'>
+                            <div>
+                                <Link to='/customerDashboard'>
+                                    <p>
+                                        <MenuItem icon={<FiHome />}>
+                                            Home
+                                        </MenuItem>
+                                    </p>
+                                </Link>
+
+                                <Link to='/customerProfile'>
+                                    <p>
+                                        <MenuItem icon={<CgProfile />}>
+                                            Profile
+                                        </MenuItem>
+                                    </p>
+                                </Link>
+
+                                <MenuItem icon={<ImHistory />}>
+                                    Order History
+                                </MenuItem>
+
+                                <Link to='/viewVendors'>
+                                    <p>
+                                        <MenuItem icon={<AiOutlineShop />}>
+                                            View Products
+                                        </MenuItem>
+                                    </p>
+                                </Link>
+                            </div>
+                            <MenuItem icon={<RiShoppingCart2Line />}>
+                                Cart
+                            </MenuItem>
+                        </Menu>
+                    </SidebarContent>
+                    <SidebarFooter>
+                        <Menu iconShape='square'>
+                            <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
+                        </Menu>
+                    </SidebarFooter>
+                </ProSidebar>
             </div>
-            <div className="logotext">
-                {/* small and big change using menucollapse state */}
-                <p>{menuCollapse ?  "BM" : "BITSmart"}</p>
-                {menuCollapse ? (
-                    <img src={logo} alt='Ecommerce' width="40" height="30" />
-                ) : (
-                    <img src={logo} alt='Ecommerce' width="70" height="50" />
-                )}
-              </div>
-            </SidebarHeader>
-            <SidebarContent>
-              <Menu iconShape="square">
-
-                <Link to='/customerDashboard'>
-                <p>
-                <MenuItem icon={<FiHome />}>Home</MenuItem>
-                </p>
-                </Link>
-
-                <Link to='/customerProfile'>
-                <p>
-                <MenuItem icon={<CgProfile />}>Profile</MenuItem>
-                </p>
-                </Link>
-
-                <MenuItem icon={<ImHistory />}>Order History</MenuItem>
-
-                <Link to='/viewVendors'>
-                <p>
-                <MenuItem icon={<AiOutlineShop />}>View Products</MenuItem>
-                </p>
-                </Link>
-
-                <MenuItem icon={<RiShoppingCart2Line />}>Cart</MenuItem>
-              </Menu>
-            </SidebarContent>
-            <SidebarFooter>
-              <Menu iconShape="square">
-                <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
-              </Menu>
-            </SidebarFooter>
-          </ProSidebar>
-        </div>
-      </>
-    );
+        </>
+    )
 }
 export default NavBar

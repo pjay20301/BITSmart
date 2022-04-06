@@ -7,7 +7,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import NavBar from './navbar';
 import ProfileCard from './profileCard';
-const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
+const url = 'http://localhost:5000/'
 
 const Dashboard = () => {
     return (

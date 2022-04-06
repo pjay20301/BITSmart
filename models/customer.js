@@ -1,20 +1,18 @@
 const mongoose = require('mongoose')
 
-var customer = new mongoose.Schema ({
+var customer = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
     address: {
         type: String,
-        required: true
+        required: true,
     },
     phone: {
         type: String,
         required: true,
-        unique: true
-
-    }
+    },
 })
 
 const Customer = mongoose.model('Customer', customer)

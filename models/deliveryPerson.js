@@ -1,15 +1,14 @@
 const mongoose = require('mongoose')
 
-var deliveryPerson = new mongoose.Schema ({
+var deliveryPerson = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
     phone: {
         type: String,
         required: true,
-        unique: true
-    }
+    },
 })
 
 const DeliveryPerson = mongoose.model('DeliveryPerson', deliveryPerson)

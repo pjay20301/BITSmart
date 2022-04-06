@@ -7,7 +7,7 @@ import NavBar from './navbar';
 import axios from 'axios';
 import ProductCard from '../vendorDashboard/productCard.jsx'
 import { Link,useNavigate } from 'react-router-dom';
-const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
+const url = 'http://localhost:5000/'
 
 const ViewVendors = () => {
     const [products, setProduct] = useState([])

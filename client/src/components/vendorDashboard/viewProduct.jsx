@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import SideBar from './sidebar'
 
-const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
+const url = 'http://localhost:5000/'
 
 const ViewProduct = () => {
     

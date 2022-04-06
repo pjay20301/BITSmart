@@ -1,11 +1,6 @@
-const mongoose = require('mongoose')
 const Vendor = require('../models/vendor')
 const Product = require('../models/product')
 const cloudinary = require('cloudinary');
-const multer = require('multer');
-const { GridFsStorage } = require('multer-gridfs-storage');
-const { gfs } = require('../database/connection')
-    
 
 exports.signUp = async (req, res) => {
     if (req.body.name == '' || req.body.address == '' || req.body.phone == '' || req.body.shopName == '') {
@@ -14,18 +9,18 @@ exports.signUp = async (req, res) => {
     }
     try {
         const newVendor = new Vendor({
-        name: req.body.name,
-        shopName: req.body.shopName,
-        address: req.body.address,
-        phone: req.body.phone,
+            name: req.body.name,
+            shopName: req.body.shopName,
+            address: req.body.address,
+            phone: req.body.phone,
         })
         const publicVendor = {
-        _id: newVendor._id,
-        name: newVendor.name,
-        shopName: newVendor.shopName,
-        adderess: newVendor.address,
-        phone: newVendor.phone,
-        status: newVendor.status
+            _id: newVendor._id,
+            name: newVendor.name,
+            shopName: newVendor.shopName,
+            adderess: newVendor.address,
+            phone: newVendor.phone,
+            status: newVendor.status
         }
         newVendor
         .save(newVendor)
@@ -48,23 +43,18 @@ exports.create = async (req, res) => {
         return
     }
     try {
-        console.log(req.file.filename)
-        // const imagesLinks = [];
-        // const result = await cloudinary.v2.uploader.upload(image, {
-        //     folder: 'products',
-        // })
-
-        // imagesLinks.push({
-        //     public_id: result.public_id,
-        //     url: result.secure_url,
-        // })
-        // req.body.image = imagesLinks
+        const result = await cloudinary.uploader.upload(req.file.path);
+        console.log(req.body.vendor);
         const newProduct = new Product({
             name: req.body.name,
             price: req.body.price,
             description: req.body.description,
             stock: req.body.stock,
-            image: req.file.filename
+            image: {
+                public_id: result.public_id,
+                url: result.secure_url
+            },
+            vendor: req.params.id
         })
         console.log(newProduct)
         newProduct

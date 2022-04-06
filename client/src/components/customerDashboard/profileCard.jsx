@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useAlert } from 'react-alert';
 import navBar from './navbar';
 import axios from 'axios';
-const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
+const url = 'http://localhost:5000/'
 const ProfileCard =()=>{
 
     const {useState} = React;

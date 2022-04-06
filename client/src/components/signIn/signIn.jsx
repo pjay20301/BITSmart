@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import logo from '../lp/logo1.png'
 import { Link } from 'react-router-dom'
 
-const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
+const url = 'http://localhost:5000/'
 
 const SignIn = () => {
 

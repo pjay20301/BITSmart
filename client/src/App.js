@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import { Provider } from 'react-redux'
 import './App.css';
 import SignUp from './components/signUp/SignUp.jsx';
 import SignIn from './components/signIn/signIn.jsx';
@@ -17,22 +18,36 @@ import ViewVendors from './components/customerDashboard/viewVendors';
 
 function App() {
   return (
-      <Router>
-          <Routes>
-                <Route exact path='/' element={<LP/>} />
-                <Route exact path='/signIn' element={<SignIn />} />
-                <Route exact path='/signUp' element={<SignUp />} />
-                <Route exact path='/customer/signUp' element={<Customer />} />
-                <Route exact path='/vendor/signUp' element={<Vendor />} />
-                <Route exact path='/deliveryPerson/signUp' element={<DeliveryPerson />}/>
-                <Route exact path='/vendorDashboard' element={<Sidebar />} />
-                <Route exact path='/create' element={<CreateProduct />} />
-                <Route exact path='/all' element={<ViewProduct />} />
-                <Route exact path='/customerDashboard' element={<Dashboard />} />
-                <Route exact path='/customerProfile' element={<CustomerProfile />} />
-                <Route exact path='/viewVendors' element={<ViewVendors/>} />
-          </Routes>
-      </Router>
+      <Provider>
+          <Router>
+              <Routes>
+                  <Route exact path='/' element={<LP />} />
+                  <Route exact path='/signIn' element={<SignIn />} />
+                  <Route exact path='/signUp' element={<SignUp />} />
+                  <Route exact path='/customer/signUp' element={<Customer />} />
+                  <Route exact path='/vendor/signUp' element={<Vendor />} />
+                  <Route
+                      exact
+                      path='/deliveryPerson/signUp'
+                      element={<DeliveryPerson />}
+                  />
+                  <Route exact path='/vendorDashboard' element={<Sidebar />} />
+                  <Route exact path='/create' element={<CreateProduct />} />
+                  <Route exact path='/all' element={<ViewProduct />} />
+                  <Route
+                      exact
+                      path='/customerDashboard'
+                      element={<Dashboard />}
+                  />
+                  <Route
+                      exact
+                      path='/customerProfile'
+                      element={<CustomerProfile />}
+                  />
+                  <Route exact path='/viewVendors' element={<ViewVendors />} />
+              </Routes>
+          </Router>
+      </Provider>
   )
 }
 
