@@ -45,7 +45,6 @@ exports.create = async (req, res) => {
     }
     try {
         const result = await cloudinary.uploader.upload(req.file.path);
-        console.log(req.body.vendor);
         const newProduct = new Product({
             name: req.body.name,
             price: req.body.price,
@@ -57,7 +56,6 @@ exports.create = async (req, res) => {
             },
             vendor: req.params.id
         })
-        console.log(newProduct)
         newProduct
             .save(newProduct)
             .then((data) => {

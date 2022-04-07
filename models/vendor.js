@@ -18,8 +18,8 @@ var vendor = mongoose.Schema({
         required: true,
     },
     status: {
-        type: Boolean,
-        default: false,
+        type: Number,
+        default: 0,
     },
     uid: {
         type: mongoose.Schema.Types.ObjectId,

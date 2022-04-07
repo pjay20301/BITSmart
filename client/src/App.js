@@ -14,7 +14,7 @@ import Dashboard from './components/customerDashboard/dashboard';
 import LP from './components/lp/lp.jsx';
 import CustomerProfile from './components/customerDashboard/customerProfile';
 import ViewVendors from './components/customerDashboard/viewVendors';
-
+import Request from './components/adminDashboard/request';
 
 function App() {
   return (
@@ -40,6 +40,7 @@ function App() {
                     element={<CustomerProfile />}
                 />
                 <Route exact path='/viewVendors' element={<ViewVendors />} />
+                <Route exact path = '/request' element = {<Request />}/>
             </Routes>
         </Router>
   )

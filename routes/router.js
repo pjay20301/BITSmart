@@ -3,6 +3,7 @@ const user = require('../controller/controller')
 const customer = require('../controller/customer')
 const vendor = require('../controller/vendor')
 const deliveryPerson = require('../controller/deliveryPerson')
+const admin = require('../controller/admin')
 const auth = require('../middleware/auth.js')
 const jsonParser = express.json()
 const router = express.Router()
@@ -26,6 +27,10 @@ router.get('/api/all', jsonParser, vendor.view)
 
 router.get('/api/getUser/:id', user.getUser)
 
-router.put('/api/approveVendor/')
+router.put('/api/acceptVendor/:id', jsonParser, admin.acceptVendor)
+
+router.put('/api/rejectVendor/:id', jsonParser, admin.rejectVendor)
+
+router.get('/api/getRequest', admin.getRequest)
 
 module.exports = router
