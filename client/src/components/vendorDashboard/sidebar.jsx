@@ -17,10 +17,10 @@ const Sidebar = () => {
     return (
         <>
             <div className='sidebar'>
-                <Link to='/signIn'>
+                <Link to='/dash'>
                     <img src={logo} alt='Ecommerce' />
                 </Link>
-                <Link to='/signIn'>
+                <Link to='/dash'>
                     <p>
                         <DashboardIcon /> Dashboard
                     </p>
@@ -56,7 +56,7 @@ const Sidebar = () => {
                         Reviews
                     </p>
                 </Link>
-                <Link to='/signIn'>
+                <Link to='/signIn'onClick={localStorage.removeItem("user")}>
                     <p>
                         <ExitToAppIcon />
                         Logout

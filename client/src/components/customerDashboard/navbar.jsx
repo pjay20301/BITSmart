@@ -62,35 +62,25 @@ const NavBar = () => {
                     </SidebarHeader>
                     <SidebarContent>
                         <Menu iconShape='square'>
-                            <div>
-                                <Link to='/customerDashboard'>
-                                    <p>
-                                        <MenuItem icon={<FiHome />}>
+                                    <MenuItem icon={<FiHome />}>
                                             Home
-                                        </MenuItem>
-                                    </p>
-                                </Link>
+                                            <Link to='/customerDashboard'/>
+                                    </MenuItem>
 
-                                <Link to='/customerProfile'>
-                                    <p>
-                                        <MenuItem icon={<CgProfile />}>
+                                    <MenuItem icon={<CgProfile />}>
                                             Profile
-                                        </MenuItem>
-                                    </p>
-                                </Link>
+                                            <Link to='/customerProfile'/>
+                                    </MenuItem>
 
-                                <MenuItem icon={<ImHistory />}>
-                                    Order History
-                                </MenuItem>
 
-                                <Link to='/viewVendors'>
-                                    <p>
-                                        <MenuItem icon={<AiOutlineShop />}>
+                                    <MenuItem icon={<ImHistory />}>
+                                        Order History
+                                    </MenuItem>
+                                        
+                                    <MenuItem icon={<AiOutlineShop />}>
                                             View Products
-                                        </MenuItem>
-                                    </p>
-                                </Link>
-                            </div>
+                                            <Link to='/viewVendors'/>
+                                    </MenuItem>
                             <MenuItem icon={<RiShoppingCart2Line />}>
                                 Cart
                             </MenuItem>
