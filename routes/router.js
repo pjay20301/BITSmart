@@ -26,4 +26,6 @@ router.get('/api/all', jsonParser, vendor.view)
 
 router.get('/api/getUser/:id', user.getUser)
 
+router.put('/api/approveVendor/')
+
 module.exports = router
