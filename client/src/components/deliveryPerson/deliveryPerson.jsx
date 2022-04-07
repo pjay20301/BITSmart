@@ -25,7 +25,8 @@ const DeliveryPerson = () => {
     e.preventDefault()
     const user = { ...deliveryPersonRegister }
     try {
-      axios.post(url + 'api/deliveryPerson/signUp', user)
+      const _id = JSON.parse(localStorage.getItem('uid'))
+      axios.post(url + 'api/deliveryPerson/signUp/' + _id, user)
     } catch (error) {
       console.log(error)
     }

@@ -9,6 +9,11 @@ var deliveryPerson = new mongoose.Schema({
         type: String,
         required: true,
     },
+    uid: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
+    },
 })
 
 const DeliveryPerson = mongoose.model('DeliveryPerson', deliveryPerson)

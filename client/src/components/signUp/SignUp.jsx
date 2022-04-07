@@ -25,7 +25,7 @@ const SignUp = () => {
         setUserRegisteration({ ...userRegisteration, [name]: value })
     }
     const navigate = useNavigate()
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const user = { ...userRegisteration }
         axios
@@ -42,53 +42,22 @@ const SignUp = () => {
                     msg: error.response?.data.message,
                 }))
             })
-        
-        if(user.role === 'customer') {
+        const response = await axios.get(url + `api/getUser/${user.email}`)
+        const role = response.data.role
+        const _id = response.data._id
+        console.log(_id);
+        localStorage.setItem('uid', JSON.stringify(_id));
+        if(role === 'customer') {
             navigate('/customer/signUp')
-        } else if(user.role === 'vendor') {
+        } else if(role === 'vendor') {
             navigate('/vendor/signUp') 
-        } else if(user.role === 'deliveryPerson') {
-            navigate('deliveryPerson/signUp')
+        } else if(role === 'deliveryPerson') {
+            navigate('/deliveryPerson/signUp')
         }
         
     }
     return (
         <>
-            {/* <div className='topbar'>
-                <Link to='/'>
-                    <img src={logo} alt='Ecommerce' />
-                </Link>
-                <Link to='/'>
-                    <p>
-                        <HomeIcon />
-                        Home
-                    </p>
-                </Link>
-                <Link to='/'>
-                    <p>
-                        <InfoIcon />
-                        About
-                    </p>
-                </Link>
-                <Link to='/'>
-                    <p>
-                        <PhoneIcon />
-                        Contact Us
-                    </p>
-                </Link>
-                <Link to='/signIn'>
-                    <p>
-                        <HowToRegIcon />
-                        SignIn
-                    </p>
-                </Link>
-                <Link to='/signUp'>
-                    <p>
-                        <GroupAddIcon />
-                        Register
-                    </p>
-                </Link>
-            </div> */}
             <section className='signup'>
                 <div className='s-container'>
                     <div className='signup-content'>

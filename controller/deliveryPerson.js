@@ -11,13 +11,14 @@ exports.signUp = async (req, res) => {
     }
     try {
         const newDeliveryPerson = new DeliveryPerson({
-        name: req.body.name,
-        phone: req.body.phone
+            name: req.body.name,
+            phone: req.body.phone,
+            uid: req.params.id,
         })
         const publicDeliveryPerson = {
             _id: newDeliveryPerson._id,
             name: newDeliveryPerson.name,
-            phone: newDeliveryPerson.phone
+            phone: newDeliveryPerson.phone,
         }
         newDeliveryPerson
         .save(newDeliveryPerson)

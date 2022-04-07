@@ -21,6 +21,11 @@ var vendor = mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    uid: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
+    },
 })
 
 const Vendor = mongoose.model('Vendor', vendor)

@@ -27,7 +27,8 @@ const Vendor = () => {
     e.preventDefault()
     const user = { ...vendorRegister }
     try {
-      axios.post(url + 'api/vendor/signUp', user)
+      const _id = JSON.parse(localStorage.getItem('uid'))
+      axios.post(url + 'api/vendor/signUp/' + _id , user)
     } catch (error) {
       console.log(error)
     }

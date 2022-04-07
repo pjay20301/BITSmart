@@ -13,6 +13,7 @@ exports.signUp = async (req, res) => {
             shopName: req.body.shopName,
             address: req.body.address,
             phone: req.body.phone,
+            uid: req.params.id,
         })
         const publicVendor = {
             _id: newVendor._id,

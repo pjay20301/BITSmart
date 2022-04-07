@@ -14,16 +14,16 @@ router.post('/api/signUp', jsonParser, user.signUp)
 
 router.get('/api/signOut', auth, user.signOut)
 
-router.post('/api/customer/signUp', jsonParser, customer.signUp)
+router.post('/api/customer/signUp/:id', jsonParser, customer.signUp)
 
-router.post('/api/vendor/signUp', jsonParser, vendor.signUp)
+router.post('/api/vendor/signUp/:id', jsonParser, vendor.signUp)
 
-router.post('/api/deliveryPerson/signUp', jsonParser, deliveryPerson.signUp)
+router.post('/api/deliveryPerson/signUp/:id', jsonParser, deliveryPerson.signUp)
 
 router.post('/api/create/:id', upload.single('image') , jsonParser,  vendor.create)
 
 router.get('/api/all', jsonParser, vendor.view)
 
-router.get('/api/getRole/:id', user.getRole)
+router.get('/api/getUser/:id', user.getUser)
 
 module.exports = router

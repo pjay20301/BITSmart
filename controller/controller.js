@@ -74,7 +74,7 @@ exports.signOut = async (req, res) => {
     }
 }
 
-exports.getRole = async (req,res) => {
+exports.getUser = async (req,res) => {
     try {
         const emailId = req.params.id
         console.log(emailId)
@@ -85,8 +85,8 @@ exports.getRole = async (req,res) => {
                     message: `cannot find email by email id ${emailId}`
                 })
             } else {
-                console.log(data.role)
-                return res.send(data.role)
+                //console.log(data.role)
+                return res.send(data)
             }
         })
     } catch(e) {

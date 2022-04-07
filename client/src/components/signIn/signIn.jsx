@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 const url = 'http://localhost:5000/'
 
 const SignIn = () => {
-
+    
     const [userLogin, setUserLogin] = useState({
         email: '',
         password: ''
@@ -37,11 +37,15 @@ const handleSubmit = async (e) => {
             console.log('error', error)
         }
         
-        const response = await axios.get(url + `api/getRole/${user.email}`)
-        const role = response.data
+        const response = await axios.get(url + `api/getUser/${user.email}`)
+        const role = response.data.role
+        
+        //console.log(_id)
         if (role === 'customer') {
             navigate('/customerDashboard')
         } else if (role === 'vendor') {
+            const _id = response.data._id
+            localStorage.setItem('vid', JSON.stringify(_id))
             navigate('/vendorDashboard')
         } else if (role === 'deliveryPerson') {
             navigate('/deliveryPersonDashboard')
@@ -50,48 +54,12 @@ const handleSubmit = async (e) => {
     } catch (error) {
         console.log(error)
     }
-    //const user1 = getRole(user.email)
     
     
 
 }
     return (
         <>
-            {/* <div className='topbar'>
-                <Link to='/'>
-                    <img src={logo} alt='Ecommerce' />
-                </Link>
-                <Link to='/'>
-                    <p>
-                        <HomeIcon />
-                        Home
-                    </p>
-                </Link>
-                <Link to='/'>
-                    <p>
-                        <InfoIcon />
-                        About
-                    </p>
-                </Link>
-                <Link to='/'>
-                    <p>
-                        <PhoneIcon />
-                        Contact Us
-                    </p>
-                </Link>
-                <Link to='/signIn'>
-                    <p>
-                        <HowToRegIcon />
-                        SignIn
-                    </p>
-                </Link>
-                <Link to='/signUp'>
-                    <p>
-                        <GroupAddIcon />
-                        Register
-                    </p>
-                </Link>
-            </div> */}
             <section className='signin'>
                 <div className='s-container'>
                     <div className='signin-content'>
@@ -173,3 +141,4 @@ const handleSubmit = async (e) => {
 };
 
 export default SignIn;
+

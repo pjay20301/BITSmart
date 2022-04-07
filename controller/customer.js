@@ -11,6 +11,7 @@ exports.signUp = async (req, res) => {
             name: req.body.name,
             address: req.body.address,
             phone: req.body.phone,
+            uid: req.params.id
         })
         const publicCustomer = {
             _id: newCustomer._id,

@@ -26,8 +26,8 @@ const Customer = () => {
     e.preventDefault()
     const user = { ...customerRegister }
     try {
-      console.log(user)
-      axios.post(url + 'api/customer/signUp', user)
+      const _id = JSON.parse(localStorage.getItem('uid'))
+      axios.post(url + 'api/customer/signUp/' + _id, user)
     } catch (error) {
       console.log(error)
     }

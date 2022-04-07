@@ -1,7 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import './createProduct.css'
-import { useSelector, useDispatch } from 'react-redux'
-import { useAlert } from 'react-alert'
 import { Button } from '@material-ui/core'
 import DescriptionIcon from '@material-ui/icons/Description'
 import StorageIcon from '@material-ui/icons/Storage'
@@ -10,7 +8,7 @@ import AttachMoneyIcon from '@material-ui/icons/AttachMoney'
 import SideBar from './sidebar'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-
+import { _id } from '../signIn/signIn.jsx'
 
 const url = 'http://localhost:5000/'
 
@@ -37,14 +35,14 @@ const CreateProduct = () => {
         const myForm = new FormData();
         myForm.append('name', product.name)
         myForm.append('price', product.price)
-        myForm.append('description', product.desctiption)
+        myForm.append('description', product.description)
         myForm.append('stock', product.stock)
         myForm.append('image', product.image)
 
         console.log(myForm)
         try {
-            
-            axios.post(url + 'api/create/' + user_id, myForm)
+            const _id = JSON.parse(localStorage.getItem('vid'));
+            axios.post(url + 'api/create/' + _id , myForm)
         } catch (error) {
             console.log(error)
         }
