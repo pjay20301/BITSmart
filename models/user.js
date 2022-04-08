@@ -4,29 +4,32 @@ const bcrypt = require('bcrypt')
 
 const jwtsecret = process.env.JWTSECRET
 
-var user = new mongoose.Schema({
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    password: {
-        type: String,
-        required: true,
-    },
-    tokens: [
-        {
-            token: {
-                type: String,
-                required: true,
-            },
+var user = new mongoose.Schema(
+    {
+        email: {
+            type: String,
+            required: true,
+            unique: true,
         },
-    ],
-    role: {
-        type: String,
-        required: true,
+        password: {
+            type: String,
+            required: true,
+        },
+        tokens: [
+            {
+                token: {
+                    type: String,
+                    required: true,
+                },
+            },
+        ],
+        role: {
+            type: String,
+            required: true,
+        },
     },
-})
+    { timestamps: true }
+)
 
 user.methods.generateToken = async function () {
     const token = jwt.sign({ _id: this._id.toString() }, jwtsecret)

@@ -17,7 +17,7 @@ import ViewVendors from './components/customerDashboard/viewVendors';
 import Request from './components/adminDashboard/request';
 
 function App() {
-  return (
+    return (
         <Router>
             <Routes>
                 <Route exact path='/' element={<LP />} />

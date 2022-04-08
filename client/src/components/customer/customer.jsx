@@ -22,17 +22,18 @@ const Customer = () => {
   }
   const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const user = { ...customerRegister }
     try {
       const _id = JSON.parse(localStorage.getItem('uid'))
-      axios.post(url + 'api/customer/signUp/' + _id, user)
+      await axios.post(url + 'api/customer/signUp/' + _id, user)
+      await axios.post(url + '/api/createCart' + user._id, user)
     } catch (error) {
       console.log(error)
     }
 
-    navigate('/all')
+    navigate('/customerDashboard')
   }
   return (
     <>

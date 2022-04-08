@@ -25,7 +25,7 @@ exports.signIn = async (req, res) => {
     const token = await user.generateToken()
         return res.send({ user: publicUser, token })
     } catch (error) {
-        return res.status(200).send({ error: error.message })
+        return res.status(400).send({ error: error.message })
     }
 }
 
@@ -77,7 +77,6 @@ exports.signOut = async (req, res) => {
 exports.getUser = async (req,res) => {
     try {
         const emailId = req.params.id
-        console.log(emailId)
         User.findOne({email:emailId})
         .then((data) => {
             if(!data) {

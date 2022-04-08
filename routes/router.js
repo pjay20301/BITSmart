@@ -33,4 +33,8 @@ router.put('/api/rejectVendor/:id', jsonParser, admin.rejectVendor)
 
 router.get('/api/getRequest', admin.getRequest)
 
+router.post('/api/createCart/:id', jsonParser, customer.createCart)
+
+router.put('/api/updateCart/:id', jsonParser, customer.updateCart)
+
 module.exports = router
