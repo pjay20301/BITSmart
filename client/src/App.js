@@ -15,7 +15,7 @@ import LP from './components/lp/lp.jsx';
 import CustomerProfile from './components/customerDashboard/customerProfile';
 import ViewVendors from './components/customerDashboard/viewVendors';
 import Request from './components/adminDashboard/request';
-
+import AdminSignIn from './components/adminSignIn/adminSignIn';
 function App() {
     return (
         <Router>
@@ -41,6 +41,7 @@ function App() {
                 />
                 <Route exact path='/viewVendors' element={<ViewVendors />} />
                 <Route exact path = '/request' element = {<Request />}/>
+                <Route exact path = '/adminSignIn' element = {<AdminSignIn/>}/>
             </Routes>
         </Router>
   )

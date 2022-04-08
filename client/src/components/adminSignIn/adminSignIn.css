@@ -1,0 +1,66 @@
+.admin-box {
+    width:100%;
+    height: 100vh;
+    background-image: linear-gradient(to top, rgb(29, 0, 110) , rgb(0, 0, 0));
+    padding: 5rem;
+    }
+.admin-login {
+    width:900px;
+    height: 600px;
+    color: #4600e9;
+    font: 12px Arial, Helvetica, sans-serif;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin-left: calc(50% - 400px);
+}
+.admin-login h1 {
+    color: #20006b;
+    font-size: x-large;
+    font-weight: bold;
+    padding: 2rem;
+    margin-left: 35%;
+}
+
+.admin-login img {
+    margin-left: 35%;
+}
+
+.form-group {
+    vertical-align: top;
+    padding: 1rem;
+    background-color: white;
+}
+input[type=password] {
+    width: 80%;
+    padding-left: 15px;
+    margin-left: 10px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-left-style: none;
+    background-color: rgb(235, 237, 255);
+    border-width: thin;
+    border-radius: 1rem;
+    font-size:medium;
+ }
+
+i {
+    color: rgb(12, 0, 78);
+    font-size: large;
+}
+
+.b1 {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #2202b3;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    opacity: 0.9;
+    border-radius: 30px;
+    margin-left: 35%;
+ }
+

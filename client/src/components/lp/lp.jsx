@@ -11,6 +11,7 @@ import GroupAddIcon from '@material-ui/icons/GroupAdd'
 import HomeIcon from '@material-ui/icons/Home'
 import InfoIcon from '@material-ui/icons/Info'
 import PhoneIcon from '@material-ui/icons/Phone'
+import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 
 const LP = () => {
     return (
@@ -49,6 +50,12 @@ const LP = () => {
                             <GroupAddIcon />
                             Register
                         </p>
+                    </Link>
+                    <Link to='/adminSignIn'>
+                    <p>
+                        <SupervisorAccountIcon/>
+                        Admin
+                    </p>
                     </Link>
                 </div>
                 <div className='lp-container'>

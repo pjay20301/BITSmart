@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import './requestCard.css'
 
 const url = 'http://localhost:5000/'
 const RequestCard = ({ request }) => {
@@ -16,31 +17,28 @@ const RequestCard = ({ request }) => {
     return (
         <>
             {/* <img src={product.image.url} alt={product.name} /> */}
-            <div>
-                <p>{request.shopName}</p>
-            </div>
-            <div>
-                <div className='form-group form-button'>
+            <div className='admin-card'>
+                <p><b>Shop Name:</b> {request.shopName}</p>
+                <p><b>Name:</b> {request.name}</p>
+                <p><b>Address:</b> {request.address}</p>
+                <p><b>Phone:</b> {request.phone}</p>
                     <input
                         type='submit'
                         name='accept'
                         id='signin'
-                        className='form-submit'
+                        className='form-submita'
                         value='Accept'
                         onClick={handleAccept}
                     />
-                    <div className='form-group form-button'>
                         <input
                             type='submit'
                             name='reject'
                             id='signin'
-                            className='form-submit'
+                            className='form-submitb'
                             value='Reject'
                             onClick={handleReject}
                         />
-                    </div>
                 </div>
-            </div>
             {/* <span>{`₹${product.price}`}</span>
             <span>{`${product.description}`}</span> */}
         </>

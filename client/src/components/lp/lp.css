@@ -6,7 +6,7 @@
     padding-left: 0;
     height: 8vh;
     width: 100%;
-    background-color: #3601b3;
+    background-color:#011cb3;
     margin-left: 0;
 }
 
@@ -14,13 +14,13 @@
     padding: 0;
     width: 10%;
     height: 50px;
-    background-color: #3601b3;
+    background-color: #011cb3;
     margin-left: 0;
 }
 .topbar > a > img {
     width: 60%;
     height: 50px;
-    background-color: #3601b3;
+    background-color: #011cb3;
 }
 
 .topbar > a > img:hover {
@@ -34,7 +34,7 @@
     height: 50px;
     font-size: large;
     font-weight: bolder;
-    background-color: #3601b3;
+    background-color: #011cb3;
     float: left;
     padding: 0;
     margin-left: 100px;
@@ -43,25 +43,41 @@
 .topbar a > P {
     display: flex;
     align-items: center;
-    background-color: #3601b3;
+    background-color: #011cb3;
     color: white;
     font-weight: 900;
 }
 .topbar a > p > svg {
     margin-right: 0.5rem;
-    background-color: #3601b3;
+    background-color: #011cb3;
+}
+
+.topbar > a:nth-last-child(3) {
+    padding: 0;
+    width: 10%;
+    height: 60px;
+    background-color: #0c133d42;
+    margin-left: 68px;
+}
+.topbar > a:nth-last-child(3) >P {
+    display: flex;
+    align-items: center;
+    background-color: #0c133d42;
+    color: white;
+    font-weight: 900;
+    padding: 0.8rem;
 }
 .topbar > a:nth-last-child(2) {
     padding: 0;
     width: 10%;
     height: 60px;
-    background-color: #11005e42;
-    margin-right: 0;
+    background-color: #0c133d42;
+    margin-left: 100px;
 }
 .topbar > a:nth-last-child(2) >P {
     display: flex;
     align-items: center;
-    background-color: #11005e42;
+    background-color: #0c133d42;
     color: white;
     font-weight: 900;
     padding: 0.8rem;
@@ -71,13 +87,13 @@
     padding: 0;
     width: 10%;
     height: 60px;
-    background-color: #11005e42;
+    background-color: #00000042;
     margin-right: 0;
 }
 .topbar > a:last-child >P {
     display: flex;
     align-items: center;
-    background-color: #11005e42;
+    background-color: #00000042;
     color: white;
     font-weight: 900;
     padding: 0.8rem;

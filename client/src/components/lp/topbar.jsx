@@ -45,6 +45,12 @@ const topBar = () => {
                     Register
                 </p>
             </Link>
+            <Link to='/AdminSignIn'>
+                <p>
+                    <HowToRegIcon/>
+                    Admin
+                </p>
+            </Link>
         </div>
     )
 }

@@ -15,22 +15,18 @@ const Request = () => {
     }) 
     return (
         <>
-            <Fragment>
                 {/* <div className='banner'>
                 <p>Welcome to Ecommerce</p>
                 <h1>FIND AMAZING PRODUCTS BELOW</h1>
             </div> */}
                 {/* <SideBar /> */}
                 <h2 className='homeHeading'>Pending Requests</h2>
-
-                <div className='container' id='container'>
                     <h1>Requests</h1>
                     {requests &&
                         requests.map((vendor) => (
                             <RequestCard key={vendor._id} request={vendor} />
                         ))}
-                </div>
-            </Fragment>
+
         </>
     )
 };
