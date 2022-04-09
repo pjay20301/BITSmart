@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+
 
 let gfs;
 
@@ -27,4 +29,4 @@ const connectDB = async () => {
         process.exit(1)
     }
 }
-module.exports = {connectDB, gfs: gfs}
+module.exports = {connectDB}
