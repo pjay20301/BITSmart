@@ -6,9 +6,10 @@
    height: fit-content;
    padding: 1rem;
    box-shadow: 2px 5px 2px 5px #d1d1d1;
+   width: 80%;
 }
 .form-submita {
-    font-size: 15px;
+    font-size: 25px;
     background-color: #003800;
     color: white;
     border: none;
@@ -17,7 +18,7 @@
 }
 
 .form-submitb {
-    font-size: 15px;
+    font-size: 25px;
     background-color: #380000;
     color: white;
     border: none;

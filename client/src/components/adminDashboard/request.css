@@ -1,0 +1,14 @@
+.ad-container{
+    width: 100%;
+}
+.admin-box {
+    margin-left: 220px;
+    width: 400px;
+    background-color: transparent;
+}
+h3 {
+    background-color: transparent;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+}
