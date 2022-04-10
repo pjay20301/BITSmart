@@ -16,6 +16,7 @@ import CustomerProfile from './components/customerDashboard/customerProfile';
 import ViewVendors from './components/customerDashboard/viewVendors';
 import Request from './components/adminDashboard/request';
 import AdminSignIn from './components/adminSignIn/adminSignIn';
+import ViewCart from './components/customerDashboard/viewCart'
 function App() {
     return (
         <Router>
@@ -29,6 +30,7 @@ function App() {
                 <Route exact path='/vendorDashboard' element={<Sidebar />} />
                 <Route exact path='/create' element={<CreateProduct />} />
                 <Route exact path='/all' element={<ViewProduct />} />
+                <Route exact path='/viewCart' element={<ViewCart />} />
                 <Route
                     exact
                     path='/customerDashboard'

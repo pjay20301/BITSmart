@@ -83,6 +83,7 @@ const NavBar = () => {
                                     </MenuItem>
                             <MenuItem icon={<RiShoppingCart2Line />}>
                                 Cart
+                                <Link to='/viewCart'/>
                             </MenuItem>
                         </Menu>
                     </SidebarContent>

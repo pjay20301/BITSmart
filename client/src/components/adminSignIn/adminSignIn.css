@@ -10,6 +10,7 @@
     color: #4600e9;
     font: 12px Arial, Helvetica, sans-serif;
     border-radius: 2rem;
+    background-color: white;
     padding: 1rem;
     margin-left: calc(50% - 400px);
 }
@@ -19,9 +20,11 @@
     font-weight: bold;
     padding: 2rem;
     margin-left: 35%;
+    background-color: white;
 }
 
-.admin-login img {
+.admin-login figure {
+    background-color: white;
     margin-left: 35%;
 }
 
@@ -47,6 +50,7 @@ input[type=password] {
 i {
     color: rgb(12, 0, 78);
     font-size: large;
+    background-color: white;
 }
 
 .b1 {
