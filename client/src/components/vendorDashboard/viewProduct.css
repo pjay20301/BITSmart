@@ -86,7 +86,7 @@
 
 .productCard > div {
   margin: 0.5vmax;
-  display: flex;
+
   justify-content: flex-start;
   align-items: center;
 }
