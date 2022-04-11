@@ -13,6 +13,7 @@ import { _id } from '../signIn/signIn.jsx'
 const url = 'http://localhost:5000/'
 
 const CreateProduct = () => {
+    const em = JSON.parse(localStorage.getItem('vemail'));
     const [imagesPreview, setImagesPreview] = useState([])
     const [images, setImages] = useState([])
     const [product, setProduct] = useState({
@@ -22,7 +23,14 @@ const CreateProduct = () => {
         stock: '',
         image: ''
     });
-
+    const [usr, setUsr] = useState([])
+    useEffect(() => {
+        async function fetchData() {
+            const resp = await axios.get(url + 'api/getUser/'+em)
+            setUsr(resp.data)
+        }
+        fetchData()
+    }) 
     const handleInput = (e) => {
         const name = e.target.name
         const value = e.target.value
@@ -41,8 +49,7 @@ const CreateProduct = () => {
 
         console.log(myForm)
         try {
-            const _id = JSON.parse(localStorage.getItem('vid'));
-            axios.post(url + 'api/create/' + _id , myForm)
+            axios.post(url + `api/create/${usr._id}` , myForm)
         } catch (error) {
             console.log(error)
         }
