@@ -4,6 +4,6 @@
 * email: v01@gmail.com pass: abcd
 * email: v02@gmail.com pass: abcd
 #### Eg customer profiles
-* email: c00@gmail.com abcd
+* email: c00@gmail.com pass: abcd
 #### Admin profiles
 * pass: admin123
