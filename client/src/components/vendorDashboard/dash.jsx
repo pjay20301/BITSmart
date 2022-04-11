@@ -13,6 +13,7 @@ const Dash = () => {
     const [usr, setUsr] = useState([])
     //let products = [];
     useEffect(() => {
+
         async function fetchData() {
             const resp = await axios.get(url + 'api/getUser/'+em)
            // console.log(resp.data._id)
