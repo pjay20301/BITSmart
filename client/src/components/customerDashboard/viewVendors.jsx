@@ -27,7 +27,6 @@ const ViewVendors = () => {
         <NavBar/>
         <div className='Dashboard-contents'>
             <div className='container' id='container'>
-                <h1>Products</h1>
                 {products.data &&
                     products.data.map((product) => (
                         <ProductCard

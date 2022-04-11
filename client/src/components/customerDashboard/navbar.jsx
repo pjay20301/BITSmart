@@ -67,7 +67,7 @@ const NavBar = () => {
                                             <Link to='/customerDashboard'/>
                                     </MenuItem>
 
-                                    <MenuItem icon={<CgProfile />}>
+                                    <MenuItem icon={<CgProfile />} >
                                             Profile
                                             <Link to='/customerProfile'/>
                                     </MenuItem>
@@ -89,7 +89,7 @@ const NavBar = () => {
                     </SidebarContent>
                     <SidebarFooter>
                         <Menu iconShape='square'>
-                            <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
+                            <MenuItem icon={<FiLogOut />} onClick={localStorage.removeItem('cid')}>Logout <Link to='/'/> </MenuItem>
                         </Menu>
                     </SidebarFooter>
                 </ProSidebar>

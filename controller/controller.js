@@ -84,7 +84,7 @@ exports.getUser = async (req,res) => {
                     message: `cannot find email by email id ${emailId}`
                 })
             } else {
-                //console.log(data.role)
+                console.log(data.role)
                 return res.send(data)
             }
         })

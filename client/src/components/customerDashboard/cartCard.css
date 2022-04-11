@@ -1,0 +1,49 @@
+* {
+    
+}
+.cartCard {
+    width: 100%;
+    height: fit-content;
+    display: table-row-group;
+    border-style: solid;
+    border-width: 0.2px;
+    border-color: #504f4f;
+    box-shadow: 2px 5px 2px 5px #d1d1d1;
+    border-radius: 1rem;
+    margin-top: 30px;
+    padding: 1rem;
+    background-image: linear-gradient(rgb(226, 201, 255), rgb(248, 242, 255));
+}
+button {
+    background-color: rgb(54, 0, 59);
+    border-width: 0.2px;
+    border-color: #690000;
+    box-shadow: 1px 1px 1px 1px #d1d1d1;
+    float: right;
+    margin-left: 10px;
+}
+p {
+    background-color: transparent;
+}
+p b {
+    background-color: transparent;
+}
+.qty b {
+    background-color: transparent;
+    float: left;
+}
+input {
+    width: 32px;
+    float: left;
+    margin-right: 10px;
+}
+
+.qtyb {
+    background-color: rgb(35, 0, 160);
+    border-width: 0.2px;
+    border-color: #690000;
+    box-shadow: 1px 1px 1px 1px #d1d1d1;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}

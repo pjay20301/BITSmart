@@ -10,12 +10,28 @@ import ProfileCard from './profileCard';
 const url =  'http://localhost:5000/'
 
 const CustomerProfile = () => {
+    const em = JSON.parse(localStorage.getItem('cemail'));
+
+    const [usr, setUsr] = useState([])
+    //let products = [];
+    useEffect(() => {
+        async function fetchData() {
+            const resp = await axios.get(url + 'api/getUser/'+em)
+            console.log(resp.data._id)
+            const response = await axios.get(url + `api/custprof/${resp.data._id}`)
+            setUsr(response.data)
+            //products = response.data
+            console.log(response.data.name)
+        }
+        fetchData()
+    })
     return (
         <>
         <NavBar/>
         <div className='Dashboard-contents'>
             <div className='container'>
-                <ProfileCard/>
+                <ProfileCard key={usr._id}
+                            usr={usr} ema={em}/>
             </div>
         </div>
         </>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './productCard.css'
 /* import * as React from 'react';
 
  */
@@ -52,6 +53,9 @@ export default function ProductCard({ product }) {
         <Typography variant="body2" color="text.secondary">
         Description: {`${product.description}`}
         </Typography>
+        <Typography variant="body2" color="text.secondary">
+        Stock: {`${product.stock}`}
+        </Typography>
         <Typography variant="body2" color="text.black">
 
       Rate: {`₹${product.price}`}
@@ -60,12 +64,13 @@ export default function ProductCard({ product }) {
       </CardContent>
 
       <CardActions>
-      <Rating name="read-only" value="5" readOnly />     
+      <Rating name="read-only" value="0" readOnly />     
       </CardActions>
       
       <CardActions>
 
-      <Button variant="outlined" >EDIT</Button>
+      <button>Edit Product</button>
+      <button>View Reviews</button>
      
       </CardActions>
     </Card>

@@ -92,3 +92,20 @@ exports.placeOrder = async (req, res) => {
             .json({ message: "failed to place the order" })
     }
 }
+
+exports.getcp = async(req, res) => {
+   try {
+        Customer.findOne( {uid: req.params.id} ).then((data) => {
+            if(!data) {
+                return res.status(404).send({
+                    message: `cannot find user by id ${req.params.id}`
+                })
+            } else {
+                //console.log(data.role)
+                return res.send(data)
+            }
+        })
+    } catch(e) {
+        return res.status(500).send(e)
+    }
+}

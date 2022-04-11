@@ -17,6 +17,8 @@ router.get('/api/signOut', auth, user.signOut)
 
 router.post('/api/customer/signUp/:id', jsonParser, customer.signUp)
 
+router.get('/api/custprof/:id', jsonParser, customer.getcp)
+
 router.post('/api/vendor/signUp/:id', jsonParser, vendor.signUp)
 
 router.post('/api/deliveryPerson/signUp/:id', jsonParser, deliveryPerson.signUp)

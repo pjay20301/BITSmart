@@ -36,12 +36,11 @@ const handleSubmit = async (e) => {
             setError((err) => ({ ...err, error: true, msg: 'User not found' }))
             console.log('error', error)
         }
-        
         const response = await axios.get(url + `api/getUser/${user.email}`)
         const role = response.data.role
-        
-        //console.log(_id)
         if (role === 'customer') {
+            const _id = response.data._id
+            localStorage.setItem('cemail', JSON.stringify(userLogin.email))
             navigate('/customerDashboard')
         } else if (role === 'vendor') {
             const _id = response.data._id

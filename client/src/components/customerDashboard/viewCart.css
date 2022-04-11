@@ -1,0 +1,36 @@
+.container h2 {
+    background-color: transparent;
+}
+.order {
+    border-style: solid;
+    border-width: 0.2px;
+    border-color: #504f4f;
+    box-shadow: 2px 5px 2px 5px #fffed3;
+    border-radius: 1rem;
+    margin-top: 5px;
+    padding: 1rem;
+    background-image: linear-gradient(rgb(255, 230, 117), rgb(255, 224, 177));
+    float: right;
+}
+.order input {
+    width: 132px;
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.order b {
+    background-color: transparent;
+    margin-right: 0px;
+    float: left;
+}
+.order button {
+    background-color: rgb(248, 70, 0);
+    border-width: 0.2px;
+    border-color: #ff0000;
+    box-shadow: 1px 1px 1px 1px #ffa56a;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: large;
+    font-weight: normal;
+}

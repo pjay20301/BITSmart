@@ -12,14 +12,14 @@
     border-width: 0.2px;
     border-color: #000000;
     border-radius: 1rem;
-    height: 300px;
+    height: 200px;
 }
 .pcardh h3 {
     margin-left: 20%;
 }
 .pcardh img {
     margin-left: 95px;
-    margin-top: 45px;
+    margin-top: 30px;
     background-color: rgb(37, 0, 139);
 }
 .pcardh p {
@@ -42,6 +42,11 @@
 }
 .pcardb p b {
     background-color: rgb(224, 221, 255);
+}
+.pcardb p i {
+    background-color: rgb(224, 221, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
 }
 .pcardb input {
     background-color:  rgb(255, 255, 255);

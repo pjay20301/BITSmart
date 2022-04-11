@@ -28,7 +28,6 @@ const ViewProduct = () => {
             <h2 className='homeHeading'>Featured Products</h2>
 
             <div className='container' id='container'>
-                <h1>Products</h1>
                 {products.data &&
                     products.data.map((product) => (
                         <ProductCard
