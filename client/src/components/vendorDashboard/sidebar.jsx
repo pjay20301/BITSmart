@@ -56,7 +56,7 @@ const Sidebar = () => {
                         Reviews
                     </p>
                 </Link>
-                <Link to='/signIn'onClick={localStorage.removeItem("user")}>
+                <Link to='/'>
                     <p>
                         <ExitToAppIcon />
                         Logout

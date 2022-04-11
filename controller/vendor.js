@@ -71,7 +71,7 @@ exports.create = async (req, res) => {
 }
 
 exports.view = async(req, res) => {
-    Product.find({}).then((data) => {
+    Product.find( {vendor: req.params.id} ).then((data) => {
         if(!data) {
             return res.status(200).json({
                 success: false,
@@ -86,3 +86,20 @@ exports.view = async(req, res) => {
         });
     })
 }
+
+exports.getvp = async(req, res) => {
+    try {
+         Vendor.findOne( {uid: req.params.id} ).then((data) => {
+             if(!data) {
+                 return res.status(404).send({
+                     message: `cannot find user by id ${req.params.id}`
+                 })
+             } else {
+                 //console.log(data.role)
+                 return res.send(data)
+             }
+         })
+     } catch(e) {
+         return res.status(500).send(e)
+     }
+ }

@@ -38,27 +38,27 @@ export default ProductCard
 export default function ProductCard({ product }) {
   return (
     <Link className='productCard' to='/all'>
-    <Card sx={{ maxWidth: 345 }}>
+    <Card className='prcard' sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="140"
         image={product.image.url}
         alt="product img"
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-        {product.name}
+      <CardContent className='prcardcontent'>
+        <Typography className='prcardty' gutterBottom variant="h5" component="div">
+        <b> {product.name}</b>
 
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-        Description: {`${product.description}`}
+        <Typography className='prcardty' variant="body1" color="text.secondary">
+        <b> Description: </b>{`${product.description}`}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-        Stock: {`${product.stock}`}
+        <Typography className='prcardty' variant="body1" color="text.secondary">
+        <b>Stock: </b>{`${product.stock}`}
         </Typography>
-        <Typography variant="body2" color="text.black">
+        <Typography className='prcardty' variant="body1" color="text.black">
 
-      Rate: {`₹${product.price}`}
+        <b>Rate:</b> {`₹${product.price}`}
       </Typography>
 
       </CardContent>
@@ -69,8 +69,8 @@ export default function ProductCard({ product }) {
       
       <CardActions>
 
-      <button>Edit Product</button>
-      <button>View Reviews</button>
+      <button className='b'>Edit Product</button>
+      <button className='b'>View Reviews</button>
      
       </CardActions>
     </Card>

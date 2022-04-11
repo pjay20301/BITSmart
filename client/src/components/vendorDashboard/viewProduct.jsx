@@ -8,12 +8,13 @@ import SideBar from './sidebar'
 const url = 'http://localhost:5000/'
 
 const ViewProduct = () => {
-    
+    const em = JSON.parse(localStorage.getItem('vemail'));
     const [products, setProduct] = useState([])
     //let products = [];
     useEffect(() => {
         async function fetchData() {
-            const response = await axios.get(url + 'api/all')
+            const resp = await axios.get(url + 'api/getUser/'+em)
+            const response = await axios.get(url + `api/all/${resp.data._id}`)
             setProduct(response.data)
         }
         fetchData()
@@ -25,9 +26,9 @@ const ViewProduct = () => {
                 <h1>FIND AMAZING PRODUCTS BELOW</h1>
             </div> */}
             <SideBar />
-            <h2 className='homeHeading'>Featured Products</h2>
+            <h2 className='homeHeading'>All Products</h2>
 
-            <div className='container' id='container'>
+            <div className='dispProd'>
                 {products.data &&
                     products.data.map((product) => (
                         <ProductCard

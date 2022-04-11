@@ -17,6 +17,7 @@ import ViewVendors from './components/customerDashboard/viewVendors';
 import Request from './components/adminDashboard/request';
 import AdminSignIn from './components/adminSignIn/adminSignIn';
 import ViewCart from './components/customerDashboard/viewCart'
+import Dash from './components/vendorDashboard/dash'
 function App() {
     return (
         <Router>
@@ -31,6 +32,7 @@ function App() {
                 <Route exact path='/create' element={<CreateProduct />} />
                 <Route exact path='/all' element={<ViewProduct />} />
                 <Route exact path='/viewCart' element={<ViewCart />} />
+                <Route exact path='/dash' element={<Dash />} />
                 <Route
                     exact
                     path='/customerDashboard'

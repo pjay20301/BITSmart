@@ -5,27 +5,31 @@ import { useAlert } from 'react-alert'
 import SideBar from './sidebar'
 import axios from 'axios'
 import { useNavigate,useLocation } from 'react-router-dom'
-const url = 'https://bits-smart.herokuapp.com/' || 'http://localhost:5000/api/'
+import VProfile from './vProfile'
+const url = 'http://localhost:5000/'
 const Dash = () => {
-    const [vend, setVend] = useState([])
+    const em = JSON.parse(localStorage.getItem('vemail'));
+
+    const [usr, setUsr] = useState([])
     //let products = [];
-    const userd = JSON.parse(localStorage.getItem('user'));
-    console.log(userd);
     useEffect(() => {
         async function fetchData() {
-            const response = await axios.get(url + 'api/viewProfile',userd)
-            setVend(response.data)
+            const resp = await axios.get(url + 'api/getUser/'+em)
+           // console.log(resp.data._id)
+            const response = await axios.get(url + `api/vendprof/${resp.data._id}`)
+            setUsr(response.data)
+            //products = response.data
+           // console.log(response.data.name)
         }
         fetchData()
     })
-    console.log(vend.name)
     return(
     <Fragment>
         <div className='dashboard'>
             <SideBar />
-            <h2>Welcome, {userd} </h2>
-            <div className='s-container'>
-            <h3>My Profile</h3>
+            <div className='container'>
+                <VProfile key={usr._id}
+                         usr={usr} ema={em}/>
             </div>
         </div>
     </Fragment>

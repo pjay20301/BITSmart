@@ -19,13 +19,15 @@ router.post('/api/customer/signUp/:id', jsonParser, customer.signUp)
 
 router.get('/api/custprof/:id', jsonParser, customer.getcp)
 
+router.get('/api/vendprof/:id', jsonParser, vendor.getvp)
+
 router.post('/api/vendor/signUp/:id', jsonParser, vendor.signUp)
 
 router.post('/api/deliveryPerson/signUp/:id', jsonParser, deliveryPerson.signUp)
 
 router.post('/api/create/:id', upload.single('image') , jsonParser,  vendor.create)
 
-router.get('/api/all', jsonParser, vendor.view)
+router.get('/api/all/:id', jsonParser, vendor.view)
 
 router.get('/api/getUser/:id', user.getUser)
 

@@ -44,8 +44,8 @@ const handleSubmit = async (e) => {
             navigate('/customerDashboard')
         } else if (role === 'vendor') {
             const _id = response.data._id
-            localStorage.setItem('vid', JSON.stringify(_id))
-            navigate('/vendorDashboard')
+            localStorage.setItem('vemail', JSON.stringify(userLogin.email))
+            navigate('/dash')
         } else if (role === 'deliveryPerson') {
             navigate('/deliveryPersonDashboard')
         }

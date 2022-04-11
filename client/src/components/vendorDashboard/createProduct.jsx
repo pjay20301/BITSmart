@@ -46,7 +46,7 @@ const CreateProduct = () => {
         } catch (error) {
             console.log(error)
         }
-        navigate('/vendorDashboard')
+        navigate('/all')
     }
 
     const createProductImagesChange = (e) => {
@@ -130,14 +130,14 @@ const CreateProduct = () => {
                             />
                         </div>
 
-                        <Button
+                        <button
                             id='createProductBtn'
                             type='submit'
                             // disabled={loading ? true : false}
                             onClick={handleSubmit}
                         >
                             Create
-                        </Button>
+                        </button>
                     </form>
                 </div>
             </div>
