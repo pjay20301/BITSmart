@@ -29,6 +29,8 @@ router.post('/api/create/:id', upload.single('image') , jsonParser,  vendor.crea
 
 router.get('/api/all/:id', jsonParser, vendor.view)
 
+router.get('/api/allvend', jsonParser, vendor.allv)
+
 router.get('/api/getUser/:id', user.getUser)
 
 router.put('/api/acceptVendor/:id', jsonParser, admin.acceptVendor)

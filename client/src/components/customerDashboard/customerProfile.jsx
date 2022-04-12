@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import './dashboard.css';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch,useParams } from 'react-redux';
 import { useAlert } from 'react-alert';
 import navBar from './navbar';
 import axios from 'axios';
@@ -10,14 +10,14 @@ import ProfileCard from './profileCard';
 const url =  'http://localhost:5000/'
 
 const CustomerProfile = () => {
-    const em = JSON.parse(localStorage.getItem('cemail'));
-
+    var em = JSON.parse(localStorage.getItem('cemail'));
+    
     const [usr, setUsr] = useState([])
     //let products = [];
     useEffect(() => {
         async function fetchData() {
             const resp = await axios.get(url + 'api/getUser/'+em)
-            console.log(resp.data._id)
+            console.log(em)
             const response = await axios.get(url + `api/custprof/${resp.data._id}`)
             setUsr(response.data)
             //products = response.data

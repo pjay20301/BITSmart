@@ -18,6 +18,7 @@ import Request from './components/adminDashboard/request';
 import AdminSignIn from './components/adminSignIn/adminSignIn';
 import ViewCart from './components/customerDashboard/viewCart'
 import Dash from './components/vendorDashboard/dash'
+import IndiVendor from './components/customerDashboard/indiVendor';
 function App() {
     return (
         <Router>
@@ -40,10 +41,11 @@ function App() {
                 />
                 <Route
                     exact
-                    path='/customerProfile'
+                    path='/customerProfile/'
                     element={<CustomerProfile />}
                 />
                 <Route exact path='/viewVendors' element={<ViewVendors />} />
+                <Route exact path='/vendorProduct/:vid' element={<IndiVendor />} />
                 <Route exact path = '/request' element = {<Request />}/>
                 <Route exact path = '/adminSignIn' element = {<AdminSignIn/>}/>
             </Routes>

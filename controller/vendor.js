@@ -87,6 +87,23 @@ exports.view = async(req, res) => {
     })
 }
 
+exports.allv = async(req, res) => {
+    Vendor.find({}).then((data) => {
+        if(!data) {
+            return res.status(200).json({
+                success: false,
+                message: 'No data available'
+            });
+        }
+        //gfs.openDownloadStreamByName(req.params.filename).pipe(res);
+        // console.log(data)
+        res.status(200).json({
+            success: true,
+            data
+        });
+    })
+}
+
 exports.getvp = async(req, res) => {
     try {
          Vendor.findOne( {uid: req.params.id} ).then((data) => {

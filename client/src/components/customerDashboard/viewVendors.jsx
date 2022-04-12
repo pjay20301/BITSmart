@@ -5,33 +5,34 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useAlert } from 'react-alert';
 import NavBar from './navbar';
 import axios from 'axios';
+import VCard from './vcard';
 import ProductCard from '../vendorDashboard/productCard.jsx'
 import { Link,useNavigate } from 'react-router-dom';
 const url = 'http://localhost:5000/'
 
 const ViewVendors = () => {
-    const [products, setProduct] = useState([])
+    const [vendors, setVendor] = useState([])
     //let products = [];
     useEffect(() => {
         async function fetchData() {
-            const response = await axios.get(url + 'api/all')
-            setProduct(response.data)
+            const response = await axios.get(url + 'api/allvend')
+            setVendor(response.data)
             //products = response.data
-            console.log(products)
+            console.log(vendors)
         }
         fetchData()
     }) 
-    console.log('products: ' + products)
+    //console.log('products: ' + products)
     return (
         <>
         <NavBar/>
         <div className='Dashboard-contents'>
             <div className='container' id='container'>
-                {products.data &&
-                    products.data.map((product) => (
-                        <ProductCard
-                            key={product._id}
-                            product={product}
+                {vendors.data &&
+                    vendors.data.map((vendor) => (
+                        <VCard
+                            key={vendor._id}
+                            vendor={vendor}
                         />
                     ))}
             </div>

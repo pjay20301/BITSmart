@@ -89,7 +89,7 @@ const NavBar = () => {
                     </SidebarContent>
                     <SidebarFooter>
                         <Menu iconShape='square'>
-                            <MenuItem icon={<FiLogOut />} onClick={localStorage.removeItem('cemail')}>Logout <Link to='/'/> </MenuItem>
+                            <MenuItem icon={<FiLogOut />} >Logout <Link to='/'/> </MenuItem>
                         </Menu>
                     </SidebarFooter>
                 </ProSidebar>
