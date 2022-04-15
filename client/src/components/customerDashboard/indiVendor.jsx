@@ -5,17 +5,31 @@ import { useAlert } from 'react-alert'
 import axios from 'axios'
 import { Link,useNavigate,useLocation,useParams } from 'react-router-dom'
 import AbortController from "abort-controller"
+import ProductCard from '../vendorDashboard/productCard'
 const url = 'http://localhost:5000/'
-const IndiVendor = ({match}) => {
-    const {vid} = useParams();
+const IndiVendor = () => {
+   const {vid} = useParams();
+    const [prod, setProd] = useState([])
+    useEffect(() => {
+        async function fetchData() {
+            console.log(`api/all/${vid}`);
+            const response = await axios.get(url + `api/all/${vid}`);
+            setProd(response.data);
+        }
+        fetchData()
+       // console.log(prod[0].name)
+    });
     return(
     <Fragment>
-        <Link to='/viewVendors'>
-        <button className='b1'> Back to All Vendors</button>
-        </Link>
-        <div>
-            <h1>Hello {vid}</h1>
-        </div>
+    <div className='dispProd'>
+                {prod.data &&
+                    prod.data.map((product) => (
+                        <ProductCard
+                            key={product._id}
+                            product={product}
+                        />
+                    ))}
+            </div>
     </Fragment>
 )
 }

@@ -1,6 +1,7 @@
 const Vendor = require('../models/vendor')
 const Product = require('../models/product')
 const cloudinary = require('cloudinary');
+var mongoose = require('mongoose');
 
 exports.signUp = async (req, res) => {
     if (req.body.name == '' || req.body.address == '' || req.body.phone == '' || req.body.shopName == '') {
@@ -71,7 +72,8 @@ exports.create = async (req, res) => {
 }
 
 exports.view = async(req, res) => {
-    Product.find( {vendor: req.params.id} ).then((data) => {
+    console.log(req.params.id)
+    Product.find( {vendor: mongoose.Types.ObjectId(req.params.id)} ).then((data) => {
         if(!data) {
             return res.status(200).json({
                 success: false,
@@ -79,7 +81,7 @@ exports.view = async(req, res) => {
             });
         }
         //gfs.openDownloadStreamByName(req.params.filename).pipe(res);
-        // console.log(data)
+         console.log(data)
         res.status(200).json({
             success: true,
             data
